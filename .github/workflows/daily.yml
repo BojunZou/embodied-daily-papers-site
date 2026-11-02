@@ -58,10 +58,8 @@ jobs:
           python -m pip install -r engine/requirements.txt
           docker build -f engine/Dockerfile.render -t paper-reading-render:local engine
       - name: Install Devin CLI
-        run: |
-          curl -fsSL https://cli.devin.ai/install.sh -o "$RUNNER_TEMP/install-devin.sh"
-          bash "$RUNNER_TEMP/install-devin.sh"
-          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+        working-directory: engine
+        run: python -m pipeline.install_devin
       - name: Configure private model authentication
         env:
           DEVIN_SESSION_TOKEN: ${{ secrets.DEVIN_SESSION_TOKEN }}
