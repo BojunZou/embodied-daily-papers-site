@@ -2,22 +2,30 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="每日 Hugging Face 具身智能论文，一句话读懂研究，打开中文幻灯片继续阅读。">
-  <meta name="theme-color" content="#215b4d"><title>具身论文日报</title>
+  <meta name="description" content="Embodied AI papers, weekly archives, and concise research summaries.">
+  <meta name="theme-color" content="#ffffff"><title>embodied ai daily papers</title>
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('embodied-theme')==='dark'?'dark':'light';}catch{}</script>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <a class="skip" href="#main">跳转到论文</a>
-  <header class="header"><a class="brand" href="./"><span class="brand-mark" aria-hidden="true">E<span>·</span></span><span>具身论文日报<small>EMBODIED DAILY</small></span></a><nav aria-label="主导航"><a href="./" id="nav-daily">每日论文</a><a href="./?view=popular" id="nav-popular">热门论文</a></nav><a class="source" href="https://huggingface.co/papers" target="_blank" rel="noopener noreferrer">来自 Hugging Face <span aria-hidden="true">↗</span></a></header>
+  <a class="skip" href="#main" data-i18n="skip">跳转到论文</a>
+  <header class="header">
+    <h1 class="brand"><a href="./">embodied ai daily papers</a></h1>
+    <nav aria-label="主导航" id="navigation"><a href="./" id="nav-daily" data-i18n="daily">每日论文</a><a href="./?view=popular" id="nav-popular" data-i18n="popular">热门论文</a></nav>
+    <div class="preferences">
+      <div class="theme-switch" role="group" aria-label="背景颜色" id="theme-switch">
+        <button type="button" class="icon-button" id="theme-light" aria-label="白色背景" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></button>
+        <button type="button" class="icon-button" id="theme-dark" aria-label="黑色背景" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A9 9 0 0 1 9.5 3.5a9 9 0 1 0 11 11Z"/></svg></button>
+      </div>
+      <button type="button" id="language-toggle" class="language-button" lang="en" aria-label="Switch to English">EN</button>
+    </div>
+  </header>
   <main id="main" class="main">
-    <div class="eyebrow"><span class="dot"></span> EMBODIED INTELLIGENCE · RESEARCH NOTES</div>
-    <div class="intro"><div><h1 id="page-title">今日具身</h1><p id="page-description">从一句话开始，走进一篇论文。</p></div><span class="issue-label" id="issue-label">DAILY EDITION</span></div>
-    <section aria-label="论文列表">
-      <div class="list-toolbar"><div class="edition"><h2 id="edition-title">最近一期</h2><span id="paper-count" class="muted"></span></div><div id="controls" class="controls"></div></div>
+    <section aria-label="论文列表" id="paper-list">
+      <div class="list-toolbar"><div class="edition"><h2 id="edition-title"></h2><span id="paper-count" class="muted"></span></div><div id="controls" class="controls"></div></div>
       <p id="status" class="status" role="status">正在加载论文…</p><div id="papers" class="papers"></div>
+      <p id="ranking-note" class="ranking-note" hidden></p>
     </section>
-    <div class="publication-note"><span class="tiny-line"></span><p id="publication-note">每日精选具身智能研究，提供中文一句话总结与论文解读幻灯片。</p></div>
   </main>
-  <footer class="footer"><span>具身论文日报 <span class="muted">/</span> Embodied Daily</span><span id="updated-at">Hugging Face Daily Papers</span></footer>
   <script type="module" src="./app.js"></script>
 </body></html>

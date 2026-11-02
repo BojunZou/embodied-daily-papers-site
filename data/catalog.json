@@ -34,7 +34,12 @@
       "downloads": {
         "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.42141/deck.pptx",
         "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.42141/deck.pdf"
-      }
+      },
+      "summary_en": "**Without updating any model weights, a coding LLM (claude-opus-5) repeatedly reviews robot execution recordings, diagnoses the causes of failure, and rewrites the layer of control code wrapped around a frozen VLA policy (the \"harness\", including tool calls, programmatic control, and a persistent memory it designs itself). After 5 iterations, the held-out average success rate rises from 9.7% to 43.3% on unseen scenes and from 12.7% to 40.2% on unseen tasks. In settings outside the policy's training distribution, a generalist policy wrapped this way sometimes even outperforms the fine-tuned version of the same model.**",
+      "summary_en_source": "58360f08d973582de774e8fa14c5cbaf362261afb6cc4047fe0125d1c7f30b09",
+      "code_url": "https://github.com/roboarchitect-ai/RoboArchitect",
+      "code_checked_at": "2026-11-02",
+      "pdf_url": "pdfs/2610.42141.pdf"
     },
     {
       "id": "2610.42096",
@@ -66,7 +71,12 @@
       "downloads": {
         "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.42096/deck.pptx",
         "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.42096/deck.pdf"
-      }
+      },
+      "summary_en": "World action models (WAMs) must encode the entire scene in order to predict frames, but merely fitting demonstration data does not guarantee that actions are generated only by the latent variables that \"actually cause the actions\". The authors prove that imposing a sparsity constraint on the \"latent variable -> action\" dependency structure allows the action-relevant latent block to be identified (up to an invertible within-block transformation) from purely observational data, without requiring temporal assumptions. Based on this, they add a routing branch with top-k sparsity regularization to the action head of Cosmos 3 (CWAM). The average success rate on RoboCasa365 rises from 0.24 to 0.43, and real-robot block stacking rises from 0.46 to 0.82.",
+      "summary_en_source": "040d7182bd77ece70dfc97c6e41b60890d1817d0f216c31ab52028837a7dd063",
+      "code_url": null,
+      "code_checked_at": "2026-11-02",
+      "pdf_url": "pdfs/2610.42096.pdf"
     },
     {
       "id": "2610.40799",
@@ -102,7 +112,12 @@
       "downloads": {
         "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40799/deck.pptx",
         "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40799/deck.pdf"
-      }
+      },
+      "summary_en": "CaPtain gives a 4B open-source VLM only low-level primitives, first performs SFT on trajectories from frontier models, then performs multi-turn RL with a critic that reads privileged simulator state, raising the LIBERO success rate from 0% to 73.8% and reaching 78.5% on LIBERO-PRO, surpassing multiple frontier-model agents.",
+      "summary_en_source": "b916b5960cd72a65dfea197f608e7fbded7b14ceb21c095bd96a3ce03a4cafcd",
+      "code_url": "https://github.com/waltstephen/CaPtain",
+      "code_checked_at": "2026-11-02",
+      "pdf_url": "pdfs/2610.40799.pdf"
     },
     {
       "id": "2610.40748",
@@ -138,7 +153,12 @@
       "downloads": {
         "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40748/deck.pptx",
         "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40748/deck.pdf"
-      }
+      },
+      "summary_en": "WorldBridge decomposes task generalization in world action models into video prediction and a bridge from video to action: adding only unlabeled videos of new tasks raises the success rate from 25.07% to 55.90%, and adding 1 more demonstration per task reaches 70.70%; the proposed model leads on most manipulation benchmarks and achieves an average of 72.5% on real robots.",
+      "summary_en_source": "5553162e08c10bc1516d4b1c7eaf9d71e2eb23d17930ec31fad2d981cfbc4e0d",
+      "code_url": null,
+      "code_checked_at": "2026-11-02",
+      "pdf_url": "pdfs/2610.40748.pdf"
     },
     {
       "id": "2610.40636",
@@ -173,7 +193,12 @@
       "downloads": {
         "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40636/deck.pptx",
         "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40636/deck.pdf"
-      }
+      },
+      "summary_en": "The paper decomposes \"spatial state representation\" into four progressively hierarchical functional levels: spatial structure, object permanence, predictive spatial updating, and actionability. On streaming first-person video from ScanNet++, the authors test 10 visual foundation models using frozen-feature probes and find that: **no model leads on all tasks; the three questions of \"what can be decoded\", \"whether history/actions/goals are actually used\", and \"whether goals are actually useful for acting\" dissociate from one another**. In addition, object permanence and action capability depend on the decodability of camera pose, while feature prediction depends on the decodability of the visible scene.",
+      "summary_en_source": "47b2ba68862d91065a9d646000494b418b4f256548faf750c0bdbf8b2968fa70",
+      "code_url": "https://github.com/yyyybq/Probing_Spatial_State_Release",
+      "code_checked_at": "2026-11-02",
+      "pdf_url": "pdfs/2610.40636.pdf"
     },
     {
       "id": "2610.40373",
@@ -208,11 +233,16 @@
       "downloads": {
         "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40373/deck.pptx",
         "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40373/deck.pdf"
-      }
+      },
+      "summary_en": "HiFOR jointly predicts short-term states, semantic milestones, and the final goal within a VLA, organizing them into a structured latent world spanning time x viewpoint x space, which is decomposed and retrieved on demand by the action during denoising; compared with π0.5, it improves by 9.05 points on RoboTwin Hard and by 11 points on real robots.",
+      "summary_en_source": "f2627bcfa2d0694e60b695681111e70c3a1f9f12326929d62b7033ae3060a923",
+      "code_url": null,
+      "code_checked_at": "2026-11-02",
+      "pdf_url": "pdfs/2610.40373.pdf"
     }
   ],
   "last_checked_at": "2026-11-02T16:37:03.168955+08:00",
-  "title": "具身论文日报",
+  "title": "embodied ai daily papers",
   "today": "2026-11-02",
   "timezone": "Asia/Shanghai"
 }
