@@ -1,4 +1,4 @@
-# embodied ai daily papers
+# Embodied AI Daily Papers
 
 Hugging Face 具身智能论文周列表，支持中英文总结及黑白主题。
 

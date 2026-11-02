@@ -119,7 +119,7 @@ function render() {
   applyLanguage();
   const popular=initial.get('view')==='popular';
   $(popular?'#nav-popular':'#nav-daily').setAttribute('aria-current','page');
-  document.title=popular?`${t('popular')} · embodied ai daily papers`:'embodied ai daily papers';
+  document.title=popular?`${t('popular')} · Embodied AI Daily Papers`:'Embodied AI Daily Papers';
   if(catalog) popular?renderPopular():renderWeekly();
 }
 if(document.body.dataset.page!=='reader') {
