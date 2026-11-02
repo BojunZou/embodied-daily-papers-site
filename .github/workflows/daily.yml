@@ -1,0 +1,155 @@
+name: Daily embodied papers
+
+on:
+  schedule:
+    - cron: '17 2 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'HF 日报结束日期 YYYY-MM-DD，留空为今天'
+        required: false
+        type: string
+      days:
+        description: '补拉天数（1–31）'
+        default: '3'
+        required: true
+        type: string
+      limit:
+        description: '生成数量，0 表示全部；首次验证可填 1'
+        default: '0'
+        required: true
+        type: string
+
+concurrency:
+  group: embodied-daily-publication
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    permissions:
+      contents: write
+      pages: read
+    steps:
+      - name: Check out public site
+        uses: actions/checkout@v6
+        with:
+          path: public
+      - name: Check out private engine
+        uses: actions/checkout@v6
+        with:
+          repository: ${{ github.repository_owner }}/embodied-daily-papers
+          ssh-key: ${{ secrets.SOURCE_READ_KEY }}
+          persist-credentials: false
+          path: engine
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Install document tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends libreoffice-impress poppler-utils fonts-noto-cjk libcairo2
+          python -m pip install -r engine/requirements.txt
+          docker build -f engine/Dockerfile.render -t paper-reading-render:local engine
+      - name: Install Devin CLI
+        run: |
+          curl -fsSL https://cli.devin.ai/install.sh -o "$RUNNER_TEMP/install-devin.sh"
+          bash "$RUNNER_TEMP/install-devin.sh"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - name: Configure private model authentication
+        env:
+          DEVIN_CREDENTIALS_TOML: ${{ secrets.DEVIN_CREDENTIALS_TOML }}
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          value = os.environ['DEVIN_CREDENTIALS_TOML']
+          if not value.strip():
+              raise SystemExit('Missing Devin authentication secret')
+          directory = Path.home() / '.local/share/devin'
+          directory.mkdir(parents=True, exist_ok=True)
+          directory.chmod(0o700)
+          path = directory / 'credentials.toml'
+          path.write_text(value)
+          path.chmod(0o600)
+          PY
+      - name: Restore published catalog
+        run: |
+          mkdir -p engine/state
+          if [ -f public/data/catalog.json ]; then cp public/data/catalog.json engine/state/catalog.json; fi
+      - name: Validate engine and configured model
+        working-directory: engine
+        run: |
+          python -m unittest discover -s tests -v
+          devin models list --format json > "$RUNNER_TEMP/models.json"
+          python - <<'PY'
+          import json, os
+          from pipeline.core import MODEL
+          with open(os.environ['RUNNER_TEMP'] + '/models.json') as f:
+              data = json.load(f)
+          models = {v['model_uid'] for family in data['families'] for v in family['variants']}
+          if MODEL not in models:
+              raise SystemExit('Configured Claude model is unavailable: ' + MODEL)
+          print('Verified model:', MODEL)
+          PY
+      - name: Generate paper readings
+        working-directory: engine
+        env:
+          INPUT_DATE: ${{ inputs.date }}
+          INPUT_DAYS: ${{ inputs.days || '3' }}
+          INPUT_LIMIT: ${{ inputs.limit || '0' }}
+        run: |
+          python - <<'PY'
+          import os, subprocess, sys
+          args = [sys.executable, '-u', '-m', 'pipeline.main', '--days', os.environ['INPUT_DAYS'], '--limit', os.environ['INPUT_LIMIT']]
+          if os.environ.get('INPUT_DATE'):
+              args += ['--date', os.environ['INPUT_DATE']]
+          subprocess.run(args, check=True)
+          PY
+      - name: Build static site
+        working-directory: engine
+        run: python -m pipeline.build --previous-site ../public
+      - name: Publish downloads and site files
+        working-directory: engine
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -m pipeline.publish ../public
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: engine/dist
+      - name: Report publication results
+        if: always()
+        run: |
+          if [ -f engine/state/run-report.json ]; then
+            python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          with open('engine/state/run-report.json') as f:
+              data=json.load(f)
+          print('已收录论文：', data['published'])
+          print('\n失败或待重试任务：', len(data['errors']))
+          for error in data['errors']:
+              print('- ' + error.replace('\n', ' '))
+          PY
+          fi
+      - name: Remove authentication file
+        if: always()
+        run: rm -f "$HOME/.local/share/devin/credentials.toml"
+  deploy:
+    needs: generate
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
