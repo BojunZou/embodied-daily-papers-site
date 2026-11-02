@@ -1,7 +1,43 @@
 {
   "version": 1,
-  "papers": [],
-  "last_checked_at": null,
+  "papers": [
+    {
+      "id": "2610.40373",
+      "title": "HiFOR: Hierarchical Foresight with Action-Guided World Grounding for Vision-Language-Action Model",
+      "hf_dates": [
+        "2026-11-02"
+      ],
+      "published_at": "2026-10-29",
+      "likes": 17,
+      "arxiv_url": "https://arxiv.org/abs/2610.40373",
+      "hf_url": "https://huggingface.co/papers/2610.40373",
+      "generated_at": "2026-11-02T16:09:18.211561+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "HiFOR在VLA中联合预测短期状态、语义里程碑与最终目标，组织成时间×视角×空间的结构化潜在世界，由去噪中的动作按需分解检索；较π0.5，RoboTwin Hard提升9.05点，真机提升11点。",
+      "slides": [
+        "slides/2610.40373/slide-01.webp",
+        "slides/2610.40373/slide-02.webp",
+        "slides/2610.40373/slide-03.webp",
+        "slides/2610.40373/slide-04.webp",
+        "slides/2610.40373/slide-05.webp",
+        "slides/2610.40373/slide-06.webp",
+        "slides/2610.40373/slide-07.webp",
+        "slides/2610.40373/slide-08.webp",
+        "slides/2610.40373/slide-09.webp",
+        "slides/2610.40373/slide-10.webp",
+        "slides/2610.40373/slide-11.webp",
+        "slides/2610.40373/slide-12.webp",
+        "slides/2610.40373/slide-13.webp",
+        "slides/2610.40373/slide-14.webp",
+        "slides/2610.40373/slide-15.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40373/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40373/deck.pdf"
+      }
+    }
+  ],
+  "last_checked_at": "2026-11-02T16:09:18.275220+08:00",
   "title": "具身论文日报",
   "today": "2026-11-02",
   "timezone": "Asia/Shanghai"
