@@ -1,0 +1,46 @@
+name: Publish website
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'reader.html'
+      - 'app.js'
+      - 'style.css'
+      - 'favicon.svg'
+      - 'data/**'
+      - 'slides/**'
+      - '.github/workflows/site.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: pages-static-publication
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - name: Package public website files
+        run: |
+          mkdir -p _site
+          cp index.html reader.html app.js style.css favicon.svg _site/
+          cp -R data _site/data
+          if [ -d slides ]; then cp -R slides _site/slides; fi
+          touch _site/.nojekyll
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
