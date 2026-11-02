@@ -2,6 +2,180 @@
   "version": 1,
   "papers": [
     {
+      "id": "2610.42141",
+      "title": "RoboArchitect: Automating the Design of Robotic Agents with Persistent Memory",
+      "hf_dates": [
+        "2026-11-02"
+      ],
+      "published_at": "2026-10-30",
+      "likes": 4,
+      "arxiv_url": "https://arxiv.org/abs/2610.42141",
+      "hf_url": "https://huggingface.co/papers/2610.42141",
+      "generated_at": "2026-11-02T16:37:02.675436+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "**不更新任何模型权重，让编码大模型（claude-opus-5）反复查看机器人执行录像、诊断失败原因、改写冻结 VLA 策略外面那层控制代码（\"harness\"，包括工具调用、程序化控制和自己设计的持久记忆）。5 轮迭代后，held-out 平均成功率在未见场景上从 9.7% 提到 43.3%，在未见任务上从 12.7% 提到 40.2%。在策略训练分布之外的设定里，这样包装后的通用策略有时甚至超过同一模型的微调版。**",
+      "slides": [
+        "slides/2610.42141/slide-01.webp",
+        "slides/2610.42141/slide-02.webp",
+        "slides/2610.42141/slide-03.webp",
+        "slides/2610.42141/slide-04.webp",
+        "slides/2610.42141/slide-05.webp",
+        "slides/2610.42141/slide-06.webp",
+        "slides/2610.42141/slide-07.webp",
+        "slides/2610.42141/slide-08.webp",
+        "slides/2610.42141/slide-09.webp",
+        "slides/2610.42141/slide-10.webp",
+        "slides/2610.42141/slide-11.webp",
+        "slides/2610.42141/slide-12.webp",
+        "slides/2610.42141/slide-13.webp",
+        "slides/2610.42141/slide-14.webp",
+        "slides/2610.42141/slide-15.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.42141/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.42141/deck.pdf"
+      }
+    },
+    {
+      "id": "2610.42096",
+      "title": "CausalWAM: Learning the Causes of Actions in World Action Models",
+      "hf_dates": [
+        "2026-11-02"
+      ],
+      "published_at": "2026-10-30",
+      "likes": 2,
+      "arxiv_url": "https://arxiv.org/abs/2610.42096",
+      "hf_url": "https://huggingface.co/papers/2610.42096",
+      "generated_at": "2026-11-02T16:36:50.290288+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "世界动作模型（WAM）为了预测画面必须编码整个场景，但只拟合示范数据，并不能保证动作只由“真正导致动作的”潜变量生成。作者证明：对“潜变量→动作”的依赖结构加稀疏约束，就能在纯观测、无需时序假设的条件下，把动作相关潜变量块识别出来（最多差一个块内可逆变换）。据此在 Cosmos 3 的动作头上加了一条带 top‑k 稀疏正则的路由支路（CWAM）。RoboCasa365 平均成功率从 0.24 提到 0.43，真机叠方块从 0.46 提到 0.82。",
+      "slides": [
+        "slides/2610.42096/slide-01.webp",
+        "slides/2610.42096/slide-02.webp",
+        "slides/2610.42096/slide-03.webp",
+        "slides/2610.42096/slide-04.webp",
+        "slides/2610.42096/slide-05.webp",
+        "slides/2610.42096/slide-06.webp",
+        "slides/2610.42096/slide-07.webp",
+        "slides/2610.42096/slide-08.webp",
+        "slides/2610.42096/slide-09.webp",
+        "slides/2610.42096/slide-10.webp",
+        "slides/2610.42096/slide-11.webp",
+        "slides/2610.42096/slide-12.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.42096/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.42096/deck.pdf"
+      }
+    },
+    {
+      "id": "2610.40799",
+      "title": "CaPtain: A Pipeline for Post-Training Code-as-Policy Robot Agents",
+      "hf_dates": [
+        "2026-11-02"
+      ],
+      "published_at": "2026-10-29",
+      "likes": 15,
+      "arxiv_url": "https://arxiv.org/abs/2610.40799",
+      "hf_url": "https://huggingface.co/papers/2610.40799",
+      "generated_at": "2026-11-02T16:30:01.432394+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "CaPtain只给4B开源VLM低层原语，先用前沿模型轨迹做SFT，再用读取模拟器特权状态的critic做多轮RL，使LIBERO成功率从0%升至73.8%，LIBERO-PRO达78.5%，超过多个前沿模型Agent。",
+      "slides": [
+        "slides/2610.40799/slide-01.webp",
+        "slides/2610.40799/slide-02.webp",
+        "slides/2610.40799/slide-03.webp",
+        "slides/2610.40799/slide-04.webp",
+        "slides/2610.40799/slide-05.webp",
+        "slides/2610.40799/slide-06.webp",
+        "slides/2610.40799/slide-07.webp",
+        "slides/2610.40799/slide-08.webp",
+        "slides/2610.40799/slide-09.webp",
+        "slides/2610.40799/slide-10.webp",
+        "slides/2610.40799/slide-11.webp",
+        "slides/2610.40799/slide-12.webp",
+        "slides/2610.40799/slide-13.webp",
+        "slides/2610.40799/slide-14.webp",
+        "slides/2610.40799/slide-15.webp",
+        "slides/2610.40799/slide-16.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40799/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40799/deck.pdf"
+      }
+    },
+    {
+      "id": "2610.40748",
+      "title": "WorldBridge: Bridging Video and Action for Task Generalization in World Action Models",
+      "hf_dates": [
+        "2026-11-02"
+      ],
+      "published_at": "2026-10-29",
+      "likes": 10,
+      "arxiv_url": "https://arxiv.org/abs/2610.40748",
+      "hf_url": "https://huggingface.co/papers/2610.40748",
+      "generated_at": "2026-11-02T16:29:03.685014+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "WorldBridge将世界动作模型的任务泛化拆为视频预测与视频到动作之桥：仅加新任务无标注视频，成功率由25.07%升至55.90%，每任务再加1条示范达70.70%；所提模型在多数操作基准领先，真机平均72.5%。",
+      "slides": [
+        "slides/2610.40748/slide-01.webp",
+        "slides/2610.40748/slide-02.webp",
+        "slides/2610.40748/slide-03.webp",
+        "slides/2610.40748/slide-04.webp",
+        "slides/2610.40748/slide-05.webp",
+        "slides/2610.40748/slide-06.webp",
+        "slides/2610.40748/slide-07.webp",
+        "slides/2610.40748/slide-08.webp",
+        "slides/2610.40748/slide-09.webp",
+        "slides/2610.40748/slide-10.webp",
+        "slides/2610.40748/slide-11.webp",
+        "slides/2610.40748/slide-12.webp",
+        "slides/2610.40748/slide-13.webp",
+        "slides/2610.40748/slide-14.webp",
+        "slides/2610.40748/slide-15.webp",
+        "slides/2610.40748/slide-16.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40748/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40748/deck.pdf"
+      }
+    },
+    {
+      "id": "2610.40636",
+      "title": "Probing Spatial State Representations in Visual Foundation Models",
+      "hf_dates": [
+        "2026-11-02"
+      ],
+      "published_at": "2026-10-29",
+      "likes": 8,
+      "arxiv_url": "https://arxiv.org/abs/2610.40636",
+      "hf_url": "https://huggingface.co/papers/2610.40636",
+      "generated_at": "2026-11-02T16:28:16.813644+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "论文把\"空间状态表征\"拆成四个逐级递进的功能层：空间结构、物体持久性、预测性空间更新、可行动性。作者在 ScanNet++ 流式第一人称视频上，用冻结特征探针测试了 10 种视觉基础模型，发现：**没有哪个模型在所有任务上都领先；\"能解码出什么\"、\"是否真的用到了历史/动作/目标\"、\"目标对行动是否真有用\"这三件事会彼此分离**。此外，物体持久性和行动能力依赖相机位姿的可读性，而特征预测依赖可见场景的可读性。",
+      "slides": [
+        "slides/2610.40636/slide-01.webp",
+        "slides/2610.40636/slide-02.webp",
+        "slides/2610.40636/slide-03.webp",
+        "slides/2610.40636/slide-04.webp",
+        "slides/2610.40636/slide-05.webp",
+        "slides/2610.40636/slide-06.webp",
+        "slides/2610.40636/slide-07.webp",
+        "slides/2610.40636/slide-08.webp",
+        "slides/2610.40636/slide-09.webp",
+        "slides/2610.40636/slide-10.webp",
+        "slides/2610.40636/slide-11.webp",
+        "slides/2610.40636/slide-12.webp",
+        "slides/2610.40636/slide-13.webp",
+        "slides/2610.40636/slide-14.webp",
+        "slides/2610.40636/slide-15.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40636/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40636/deck.pdf"
+      }
+    },
+    {
       "id": "2610.40373",
       "title": "HiFOR: Hierarchical Foresight with Action-Guided World Grounding for Vision-Language-Action Model",
       "hf_dates": [
@@ -37,7 +211,7 @@
       }
     }
   ],
-  "last_checked_at": "2026-11-02T16:09:18.275220+08:00",
+  "last_checked_at": "2026-11-02T16:37:03.168955+08:00",
   "title": "具身论文日报",
   "today": "2026-11-02",
   "timezone": "Asia/Shanghai"
