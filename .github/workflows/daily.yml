@@ -5,6 +5,10 @@ on:
     - cron: '17 2 * * *'
   workflow_dispatch:
     inputs:
+      refresh_only:
+        description: '只更新页面、英文总结和代码链接，保留已生成论文'
+        type: boolean
+        default: false
       date:
         description: 'HF 日报结束日期 YYYY-MM-DD，留空为今天'
         required: false
@@ -52,6 +56,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install document tools
+        if: ${{ !inputs.refresh_only }}
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends libreoffice-impress poppler-utils fonts-noto-cjk libcairo2
@@ -101,6 +106,7 @@ jobs:
           print('Verified model:', MODEL)
           PY
       - name: Generate paper readings
+        if: ${{ !inputs.refresh_only }}
         working-directory: engine
         env:
           INPUT_DATE: ${{ inputs.date }}
@@ -114,6 +120,9 @@ jobs:
               args += ['--date', os.environ['INPUT_DATE']]
           subprocess.run(args, check=True)
           PY
+      - name: Prepare English summaries and code links
+        working-directory: engine
+        run: python -u -m pipeline.metadata
       - name: Build static site
         working-directory: engine
         run: python -m pipeline.build --previous-site ../public

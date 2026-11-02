@@ -11,6 +11,7 @@ on:
       - 'favicon.svg'
       - 'data/**'
       - 'slides/**'
+      - 'pdfs/**'
       - '.github/workflows/site.yml'
   workflow_dispatch:
 
@@ -37,6 +38,7 @@ jobs:
           cp index.html reader.html app.js style.css favicon.svg _site/
           cp -R data _site/data
           if [ -d slides ]; then cp -R slides _site/slides; fi
+          if [ -d pdfs ]; then cp -R pdfs _site/pdfs; fi
           touch _site/.nojekyll
       - uses: actions/upload-pages-artifact@v4
         with:
