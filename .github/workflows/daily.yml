@@ -62,14 +62,33 @@ jobs:
           curl -fsSL https://cli.devin.ai/install.sh -o "$RUNNER_TEMP/install-devin.sh"
           bash "$RUNNER_TEMP/install-devin.sh"
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - name: Configure private model authentication
+        env:
+          DEVIN_SESSION_TOKEN: ${{ secrets.DEVIN_SESSION_TOKEN }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          value = os.environ['DEVIN_SESSION_TOKEN']
+          if not value.strip():
+              raise SystemExit('Missing Devin authentication secret')
+          directory = Path.home() / '.local/share/devin'
+          directory.mkdir(parents=True, exist_ok=True)
+          directory.chmod(0o700)
+          fields = {'windsurf_api_key': value,
+                    'api_server_url': 'https://server.codeium.com',
+                    'devin_webapp_host': 'https://app.devin.ai',
+                    'devin_api_url': 'https://api.devin.ai'}
+          path = directory / 'credentials.toml'
+          path.write_text('\n'.join(k + ' = ' + json.dumps(v) for k, v in fields.items()) + '\n')
+          path.chmod(0o600)
+          PY
       - name: Restore published catalog
         run: |
           mkdir -p engine/state
           if [ -f public/data/catalog.json ]; then cp public/data/catalog.json engine/state/catalog.json; fi
       - name: Validate engine and configured model
         working-directory: engine
-        env:
-          WINDSURF_API_KEY: ${{ secrets.DEVIN_SESSION_TOKEN }}
         run: |
           python -m unittest discover -s tests -v
           devin models list --format json > "$RUNNER_TEMP/models.json"
@@ -86,7 +105,6 @@ jobs:
       - name: Generate paper readings
         working-directory: engine
         env:
-          WINDSURF_API_KEY: ${{ secrets.DEVIN_SESSION_TOKEN }}
           INPUT_DATE: ${{ inputs.date }}
           INPUT_DAYS: ${{ inputs.days || '3' }}
           INPUT_LIMIT: ${{ inputs.limit || '0' }}
@@ -124,6 +142,9 @@ jobs:
               print('- ' + error.replace('\n', ' '))
           PY
           fi
+      - name: Remove authentication file
+        if: always()
+        run: rm -f "$HOME/.local/share/devin/credentials.toml"
   deploy:
     needs: generate
     runs-on: ubuntu-latest
