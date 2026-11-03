@@ -2,13 +2,139 @@
   "version": 1,
   "papers": [
     {
+      "id": "2611.01560",
+      "title": "Democratizing Robot-Use Agents: A Unified Harness with Open Models",
+      "hf_dates": [
+        "2026-11-03"
+      ],
+      "published_at": "2026-11-01",
+      "likes": 32,
+      "arxiv_url": "https://arxiv.org/abs/2611.01560",
+      "hf_url": "https://huggingface.co/papers/2611.01560",
+      "generated_at": "2026-11-03T17:44:11.984148+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "论文提出了统一、模块化、能流水线执行的机器人使用智能体框架 uni-robot-agent。在不使用深度、任务成功判定器等特权信息的条件下，开源的 Qwen3.8-Flash-Next 在 RoboDojo 上拿到 31.39 分，高于官方公布的 GPT-6 Astra+RoboProbe（28.97），真机 19 个任务上与微调后的 π0.5 持平。论文进一步分析认为，机器人使用能力来自视觉理解、空间定位、几何编码、具身推理这四项通用能力，后续训练应同时提升这四项。",
+      "slides": [
+        "slides/2611.01560/slide-01.webp",
+        "slides/2611.01560/slide-02.webp",
+        "slides/2611.01560/slide-03.webp",
+        "slides/2611.01560/slide-04.webp",
+        "slides/2611.01560/slide-05.webp",
+        "slides/2611.01560/slide-06.webp",
+        "slides/2611.01560/slide-07.webp",
+        "slides/2611.01560/slide-08.webp",
+        "slides/2611.01560/slide-09.webp",
+        "slides/2611.01560/slide-10.webp",
+        "slides/2611.01560/slide-11.webp",
+        "slides/2611.01560/slide-12.webp",
+        "slides/2611.01560/slide-13.webp",
+        "slides/2611.01560/slide-14.webp",
+        "slides/2611.01560/slide-15.webp",
+        "slides/2611.01560/slide-16.webp",
+        "slides/2611.01560/slide-17.webp",
+        "slides/2611.01560/slide-18.webp",
+        "slides/2611.01560/slide-19.webp",
+        "slides/2611.01560/slide-20.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.01560/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.01560/deck.pdf"
+      },
+      "summary_en": "The paper proposes uni-robot-agent, a unified, modular robot-use agent framework that supports pipelined execution. Without using privileged information such as depth or task-success judges, the open-source Qwen3.8-Flash-Next scores 31.39 on RoboDojo, higher than the officially reported GPT-6 Astra+RoboProbe (28.97), and on 19 real-robot tasks it matches a fine-tuned π0.5. The paper further argues that robot-use ability stems from four general capabilities (visual understanding, spatial grounding, geometric encoding, and embodied reasoning), and that future training should improve all four at the same time.",
+      "summary_en_source": "adcfbdbedcdc903b35a3135a60f27af2f16cf9f09f7d57288c976ba07619e94b",
+      "code_url": "https://github.com/Open-RUA/uni-robot-agent",
+      "code_checked_at": "2026-11-03",
+      "pdf_url": "pdfs/2611.01560.pdf"
+    },
+    {
+      "id": "2610.41216",
+      "title": "TinyAstral: Transferring Self-Evolving Harnesses to Tiny Generalist Manipulation Agents",
+      "hf_dates": [
+        "2026-11-03"
+      ],
+      "published_at": "2026-10-30",
+      "likes": 3,
+      "arxiv_url": "https://arxiv.org/abs/2610.41216",
+      "hf_url": "https://huggingface.co/papers/2610.41216",
+      "generated_at": "2026-11-03T17:50:28.291092+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "TinyAstral 先冻结一个开源大模型教师（Qwen3.8-Flash-Next，图中标约 180B），由前沿 LLM 智能体在统计检验把关下递归改进它周围的工具/反馈/记忆/恢复\"harness\"（RoboTwin 成功率 33.4%→63.6%），再在冻结的最终 harness 里收集带推理和故障恢复的教师轨迹，蒸馏出 0.8B–4B 学生。4B 学生在同一 harness 中达到 62.8%，接近教师；在三个从未用于训练的基准上接近 552B 模型；部署时所需加速器时间约为教师的五分之一。",
+      "slides": [
+        "slides/2610.41216/slide-01.webp",
+        "slides/2610.41216/slide-02.webp",
+        "slides/2610.41216/slide-03.webp",
+        "slides/2610.41216/slide-04.webp",
+        "slides/2610.41216/slide-05.webp",
+        "slides/2610.41216/slide-06.webp",
+        "slides/2610.41216/slide-07.webp",
+        "slides/2610.41216/slide-08.webp",
+        "slides/2610.41216/slide-09.webp",
+        "slides/2610.41216/slide-10.webp",
+        "slides/2610.41216/slide-11.webp",
+        "slides/2610.41216/slide-12.webp",
+        "slides/2610.41216/slide-13.webp",
+        "slides/2610.41216/slide-14.webp",
+        "slides/2610.41216/slide-15.webp",
+        "slides/2610.41216/slide-16.webp",
+        "slides/2610.41216/slide-17.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.41216/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.41216/deck.pdf"
+      },
+      "summary_en": "TinyAstral first freezes an open-source large-model teacher (Qwen3.8-Flash-Next, labeled as roughly 180B in the figure), and has a frontier LLM agent, gated by statistical testing, recursively improve the tool/feedback/memory/recovery \"harness\" around it (RoboTwin success rate 33.4%→63.6%). It then collects teacher trajectories with reasoning and failure recovery inside the frozen final harness and distills them into 0.8B–4B students. The 4B student reaches 62.8% in the same harness, close to the teacher; on three benchmarks never used for training it approaches a 552B model; and at deployment it requires roughly one-fifth of the teacher's accelerator time.",
+      "summary_en_source": "5e831269eba9f1efaaefde83998087f0847fcd09446a834f54cedea6c2aca7b1",
+      "code_url": "https://github.com/Garfield-kh/TinyAstral",
+      "code_checked_at": "2026-11-03",
+      "pdf_url": "pdfs/2610.41216.pdf"
+    },
+    {
+      "id": "2610.39278",
+      "title": "WorldFlow: Joint Video and 3D Motion Prediction via Large-Scale Pretraining",
+      "hf_dates": [
+        "2026-11-03"
+      ],
+      "published_at": "2026-10-29",
+      "likes": 6,
+      "arxiv_url": "https://arxiv.org/abs/2610.39278",
+      "hf_url": "https://huggingface.co/papers/2610.39278",
+      "generated_at": "2026-11-03T17:51:47.545637+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "WorldFlow 在预训练视频世界模型 Cosmos-Nano 上加了一种\"3D 位移 token\"模态：输入一张图、一句指令和若干 3D 查询点，用同一个 MoT 生成器在 rectified-flow 下**同时去噪未来视频和这些点的度量 3D 轨迹**。在约 144 万条样本上训练后，它在作者自建的 WorldFlowBench 上取得了所有学习方法中最低的 ADE/FDE。消融显示，\"顺带生成视频\"能让 3D 运动预测误差降低近一半。不过它在真实场景子集 Real3 上仍不如\"一动不动\"的 Static 参考，这一点要注意。",
+      "slides": [
+        "slides/2610.39278/slide-01.webp",
+        "slides/2610.39278/slide-02.webp",
+        "slides/2610.39278/slide-03.webp",
+        "slides/2610.39278/slide-04.webp",
+        "slides/2610.39278/slide-05.webp",
+        "slides/2610.39278/slide-06.webp",
+        "slides/2610.39278/slide-07.webp",
+        "slides/2610.39278/slide-08.webp",
+        "slides/2610.39278/slide-09.webp",
+        "slides/2610.39278/slide-10.webp",
+        "slides/2610.39278/slide-11.webp",
+        "slides/2610.39278/slide-12.webp",
+        "slides/2610.39278/slide-13.webp",
+        "slides/2610.39278/slide-14.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.39278/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.39278/deck.pdf"
+      },
+      "summary_en": "WorldFlow adds a \"3D displacement token\" modality to the pretrained video world model Cosmos-Nano: given an image, an instruction, and a number of 3D query points, a single MoT generator under rectified flow **jointly denoises the future video and the metric 3D trajectories of these points**. After training on about 1.44 million samples, it achieves the lowest ADE/FDE among all learned methods on WorldFlowBench, a benchmark built by the authors. Ablations show that \"generating video along the way\" reduces 3D motion prediction error by nearly half. However, on the real-world subset Real3 it still underperforms the \"stay completely still\" Static reference, which is worth noting.",
+      "summary_en_source": "b4607e9382ef8bea4cc391843188ea16cc48f81477bf0aa6bb726575a855a297",
+      "code_url": "https://github.com/worldflow-rbs/worldflow",
+      "code_checked_at": "2026-11-03",
+      "pdf_url": "pdfs/2610.39278.pdf"
+    },
+    {
       "id": "2610.42141",
       "title": "RoboArchitect: Automating the Design of Robotic Agents with Persistent Memory",
       "hf_dates": [
         "2026-11-02"
       ],
       "published_at": "2026-10-30",
-      "likes": 4,
+      "likes": 6,
       "arxiv_url": "https://arxiv.org/abs/2610.42141",
       "hf_url": "https://huggingface.co/papers/2610.42141",
       "generated_at": "2026-11-02T16:37:02.675436+08:00",
@@ -38,7 +164,7 @@
       "summary_en": "**Without updating any model weights, a coding LLM (claude-opus-5) repeatedly reviews robot execution recordings, diagnoses the causes of failure, and rewrites the layer of control code wrapped around a frozen VLA policy (the \"harness\", including tool calls, programmatic control, and a persistent memory it designs itself). After 5 iterations, the held-out average success rate rises from 9.7% to 43.3% on unseen scenes and from 12.7% to 40.2% on unseen tasks. In settings outside the policy's training distribution, a generalist policy wrapped this way sometimes even outperforms the fine-tuned version of the same model.**",
       "summary_en_source": "58360f08d973582de774e8fa14c5cbaf362261afb6cc4047fe0125d1c7f30b09",
       "code_url": "https://github.com/roboarchitect-ai/RoboArchitect",
-      "code_checked_at": "2026-11-02",
+      "code_checked_at": "2026-11-03",
       "pdf_url": "pdfs/2610.42141.pdf"
     },
     {
@@ -48,7 +174,7 @@
         "2026-11-02"
       ],
       "published_at": "2026-10-30",
-      "likes": 2,
+      "likes": 3,
       "arxiv_url": "https://arxiv.org/abs/2610.42096",
       "hf_url": "https://huggingface.co/papers/2610.42096",
       "generated_at": "2026-11-02T16:36:50.290288+08:00",
@@ -75,8 +201,50 @@
       "summary_en": "World action models (WAMs) must encode the entire scene in order to predict frames, but merely fitting demonstration data does not guarantee that actions are generated only by the latent variables that \"actually cause the actions\". The authors prove that imposing a sparsity constraint on the \"latent variable -> action\" dependency structure allows the action-relevant latent block to be identified (up to an invertible within-block transformation) from purely observational data, without requiring temporal assumptions. Based on this, they add a routing branch with top-k sparsity regularization to the action head of Cosmos 3 (CWAM). The average success rate on RoboCasa365 rises from 0.24 to 0.43, and real-robot block stacking rises from 0.46 to 0.82.",
       "summary_en_source": "040d7182bd77ece70dfc97c6e41b60890d1817d0f216c31ab52028837a7dd063",
       "code_url": null,
-      "code_checked_at": "2026-11-02",
+      "code_checked_at": "2026-11-03",
       "pdf_url": "pdfs/2610.42096.pdf"
+    },
+    {
+      "id": "2610.42053",
+      "title": "REA: A Routed Embodied Agent Runtime for Asynchronous Brain-Cerebellum Control",
+      "hf_dates": [
+        "2026-11-02"
+      ],
+      "published_at": "2026-10-30",
+      "likes": 137,
+      "arxiv_url": "https://arxiv.org/abs/2610.42053",
+      "hf_url": "https://huggingface.co/papers/2610.42053",
+      "generated_at": "2026-11-03T17:44:21.242449+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "REA 是一个\"大脑-路由器-小脑\"三层具身运行时。它的规则是\"运行中的策略永远不等大脑\"：大脑（System 2）在离线阶段生成策略，在线时只在策略返回的边界上做完成判定；路由器（System 1）按开发集上测得的成功率查表派发策略，并在共享预算内逐级升级恢复。这样快策略（代码策略、VLA、全身控制器）按自身频率运行。在 LIBERO-Pro 的 3,000 个测试 episode 上，REA 达到 95.9% 成功率，比池中最强单一方法（94.7%）略高，控制时间少 17%；它还能迁移到 RoboTwin、BEHAVIOR-1K 和真机。",
+      "slides": [
+        "slides/2610.42053/slide-01.webp",
+        "slides/2610.42053/slide-02.webp",
+        "slides/2610.42053/slide-03.webp",
+        "slides/2610.42053/slide-04.webp",
+        "slides/2610.42053/slide-05.webp",
+        "slides/2610.42053/slide-06.webp",
+        "slides/2610.42053/slide-07.webp",
+        "slides/2610.42053/slide-08.webp",
+        "slides/2610.42053/slide-09.webp",
+        "slides/2610.42053/slide-10.webp",
+        "slides/2610.42053/slide-11.webp",
+        "slides/2610.42053/slide-12.webp",
+        "slides/2610.42053/slide-13.webp",
+        "slides/2610.42053/slide-14.webp",
+        "slides/2610.42053/slide-15.webp",
+        "slides/2610.42053/slide-16.webp",
+        "slides/2610.42053/slide-17.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.42053/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.42053/deck.pdf"
+      },
+      "summary_en": "REA is a three-layer \"brain-router-cerebellum\" embodied runtime. Its rule is that \"a running policy never waits for the brain\": the brain (System 2) generates policies in an offline phase, and online it only makes completion judgments at the boundaries where policies return; the router (System 1) dispatches policies via a lookup table based on success rates measured on a development set, and escalates recovery step by step within a shared budget. This lets fast policies (code policies, VLAs, whole-body controllers) run at their own frequencies. On 3,000 test episodes of LIBERO-Pro, REA reaches a 95.9% success rate, slightly higher than the strongest single method in the pool (94.7%), with 17% less control time; it also transfers to RoboTwin, BEHAVIOR-1K, and real robots.",
+      "summary_en_source": "ac2b35bba4922e4416dc2c5f1abbff6f99bf9945578d21945addd75508b36eed",
+      "code_url": null,
+      "code_checked_at": "2026-11-03",
+      "pdf_url": "pdfs/2610.42053.pdf"
     },
     {
       "id": "2610.40799",
@@ -85,7 +253,7 @@
         "2026-11-02"
       ],
       "published_at": "2026-10-29",
-      "likes": 15,
+      "likes": 20,
       "arxiv_url": "https://arxiv.org/abs/2610.40799",
       "hf_url": "https://huggingface.co/papers/2610.40799",
       "generated_at": "2026-11-02T16:30:01.432394+08:00",
@@ -116,7 +284,7 @@
       "summary_en": "CaPtain gives a 4B open-source VLM only low-level primitives, first performs SFT on trajectories from frontier models, then performs multi-turn RL with a critic that reads privileged simulator state, raising the LIBERO success rate from 0% to 73.8% and reaching 78.5% on LIBERO-PRO, surpassing multiple frontier-model agents.",
       "summary_en_source": "b916b5960cd72a65dfea197f608e7fbded7b14ceb21c095bd96a3ce03a4cafcd",
       "code_url": "https://github.com/waltstephen/CaPtain",
-      "code_checked_at": "2026-11-02",
+      "code_checked_at": "2026-11-03",
       "pdf_url": "pdfs/2610.40799.pdf"
     },
     {
@@ -126,7 +294,7 @@
         "2026-11-02"
       ],
       "published_at": "2026-10-29",
-      "likes": 10,
+      "likes": 25,
       "arxiv_url": "https://arxiv.org/abs/2610.40748",
       "hf_url": "https://huggingface.co/papers/2610.40748",
       "generated_at": "2026-11-02T16:29:03.685014+08:00",
@@ -157,7 +325,7 @@
       "summary_en": "WorldBridge decomposes task generalization in world action models into video prediction and a bridge from video to action: adding only unlabeled videos of new tasks raises the success rate from 25.07% to 55.90%, and adding 1 more demonstration per task reaches 70.70%; the proposed model leads on most manipulation benchmarks and achieves an average of 72.5% on real robots.",
       "summary_en_source": "5553162e08c10bc1516d4b1c7eaf9d71e2eb23d17930ec31fad2d981cfbc4e0d",
       "code_url": null,
-      "code_checked_at": "2026-11-02",
+      "code_checked_at": "2026-11-03",
       "pdf_url": "pdfs/2610.40748.pdf"
     },
     {
@@ -167,7 +335,7 @@
         "2026-11-02"
       ],
       "published_at": "2026-10-29",
-      "likes": 8,
+      "likes": 17,
       "arxiv_url": "https://arxiv.org/abs/2610.40636",
       "hf_url": "https://huggingface.co/papers/2610.40636",
       "generated_at": "2026-11-02T16:28:16.813644+08:00",
@@ -197,7 +365,7 @@
       "summary_en": "The paper decomposes \"spatial state representation\" into four progressively hierarchical functional levels: spatial structure, object permanence, predictive spatial updating, and actionability. On streaming first-person video from ScanNet++, the authors test 10 visual foundation models using frozen-feature probes and find that: **no model leads on all tasks; the three questions of \"what can be decoded\", \"whether history/actions/goals are actually used\", and \"whether goals are actually useful for acting\" dissociate from one another**. In addition, object permanence and action capability depend on the decodability of camera pose, while feature prediction depends on the decodability of the visible scene.",
       "summary_en_source": "47b2ba68862d91065a9d646000494b418b4f256548faf750c0bdbf8b2968fa70",
       "code_url": "https://github.com/yyyybq/Probing_Spatial_State_Release",
-      "code_checked_at": "2026-11-02",
+      "code_checked_at": "2026-11-03",
       "pdf_url": "pdfs/2610.40636.pdf"
     },
     {
@@ -207,7 +375,7 @@
         "2026-11-02"
       ],
       "published_at": "2026-10-29",
-      "likes": 17,
+      "likes": 46,
       "arxiv_url": "https://arxiv.org/abs/2610.40373",
       "hf_url": "https://huggingface.co/papers/2610.40373",
       "generated_at": "2026-11-02T16:09:18.211561+08:00",
@@ -237,12 +405,98 @@
       "summary_en": "HiFOR jointly predicts short-term states, semantic milestones, and the final goal within a VLA, organizing them into a structured latent world spanning time x viewpoint x space, which is decomposed and retrieved on demand by the action during denoising; compared with π0.5, it improves by 9.05 points on RoboTwin Hard and by 11 points on real robots.",
       "summary_en_source": "f2627bcfa2d0694e60b695681111e70c3a1f9f12326929d62b7033ae3060a923",
       "code_url": null,
-      "code_checked_at": "2026-11-02",
+      "code_checked_at": "2026-11-03",
       "pdf_url": "pdfs/2610.40373.pdf"
+    },
+    {
+      "id": "2610.37393",
+      "title": "Learning Quality-Controllable Robot Policies with Iterative Hindsight Relabeling",
+      "hf_dates": [
+        "2026-11-02"
+      ],
+      "published_at": "2026-10-27",
+      "likes": 7,
+      "arxiv_url": "https://arxiv.org/abs/2610.37393",
+      "hf_url": "https://huggingface.co/papers/2610.37393",
+      "generated_at": "2026-11-03T17:55:13.116017+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "作者把“执行质量”（速度、平滑度、路径长度、托盘稳定性等）量化成分位数标签，作为条件输入行为克隆策略（QCP），推理时可以像拧旋钮一样指定质量档位；再用“按最高档位采集 rollout → 只保留成功轨迹 → 按实测质量事后重标注 → 从头重训”的迭代循环，不需要任何人工标注，就把可控的质量范围推到初始示教之外。质量和成功率同时提升，在真机上表现为传送带吞吐 +59%、端酒托盘倾角 −27%。",
+      "slides": [
+        "slides/2610.37393/slide-01.webp",
+        "slides/2610.37393/slide-02.webp",
+        "slides/2610.37393/slide-03.webp",
+        "slides/2610.37393/slide-04.webp",
+        "slides/2610.37393/slide-05.webp",
+        "slides/2610.37393/slide-06.webp",
+        "slides/2610.37393/slide-07.webp",
+        "slides/2610.37393/slide-08.webp",
+        "slides/2610.37393/slide-09.webp",
+        "slides/2610.37393/slide-10.webp",
+        "slides/2610.37393/slide-11.webp",
+        "slides/2610.37393/slide-12.webp",
+        "slides/2610.37393/slide-13.webp",
+        "slides/2610.37393/slide-14.webp",
+        "slides/2610.37393/slide-15.webp",
+        "slides/2610.37393/slide-16.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.37393/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.37393/deck.pdf"
+      },
+      "summary_en": "The authors quantize \"execution quality\" (speed, smoothness, path length, tray stability, etc.) into quantile labels and feed them as conditioning inputs to a behavior cloning policy (QCP), so that at inference time the quality level can be specified like turning a knob. They then use an iterative loop of \"collect rollouts at the highest level → keep only successful trajectories → relabel in hindsight by measured quality → retrain from scratch\", which, without any human annotation, pushes the controllable quality range beyond the initial demonstrations. Quality and success rate improve simultaneously, and on real robots this shows up as +59% conveyor-belt throughput and −27% tilt angle when carrying a tray of wine.",
+      "summary_en_source": "4f65d1791c67563557a34b5ed4fe00e957e47d79da9b49097de9fe036cbc3664",
+      "code_url": "https://github.com/google-deepmind/mujoco_menagerie",
+      "code_checked_at": "2026-11-03",
+      "pdf_url": "pdfs/2610.37393.pdf"
+    },
+    {
+      "id": "2610.35850",
+      "title": "OSWAM: An Effective World Action Model with One-Step Action Generation",
+      "hf_dates": [
+        "2026-11-02"
+      ],
+      "published_at": "2026-10-26",
+      "likes": 25,
+      "arxiv_url": "https://arxiv.org/abs/2610.35850",
+      "hf_url": "https://huggingface.co/papers/2610.35850",
+      "generated_at": "2026-11-03T17:46:29.874854+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "OSWAM 不再让 Action DiT 从高斯噪声起步，而是在 Video DiT 中额外放一小组\"想象 token\"（AIT/SIT），用一次前向就得到一个粗动作先验，再交给 Action DiT 去噪一步完成细化，同时用能看到未来帧的教师做特征蒸馏。这样，直接策略式世界动作模型（direct-policy WAM）的动作去噪从 10 步减到 1 步：NAVSIM 上 PDMS 保持 90.3，RoboTwin 2.0 上成功率 90.0%（比 10 步的 Fast-WAM 低 1.8 个点），端到端提速约 3 倍，编译后延迟 40–53 ms（RTX 5090）。",
+      "slides": [
+        "slides/2610.35850/slide-01.webp",
+        "slides/2610.35850/slide-02.webp",
+        "slides/2610.35850/slide-03.webp",
+        "slides/2610.35850/slide-04.webp",
+        "slides/2610.35850/slide-05.webp",
+        "slides/2610.35850/slide-06.webp",
+        "slides/2610.35850/slide-07.webp",
+        "slides/2610.35850/slide-08.webp",
+        "slides/2610.35850/slide-09.webp",
+        "slides/2610.35850/slide-10.webp",
+        "slides/2610.35850/slide-11.webp",
+        "slides/2610.35850/slide-12.webp",
+        "slides/2610.35850/slide-13.webp",
+        "slides/2610.35850/slide-14.webp",
+        "slides/2610.35850/slide-15.webp",
+        "slides/2610.35850/slide-16.webp",
+        "slides/2610.35850/slide-17.webp",
+        "slides/2610.35850/slide-18.webp",
+        "slides/2610.35850/slide-19.webp",
+        "slides/2610.35850/slide-20.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.35850/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.35850/deck.pdf"
+      },
+      "summary_en": "Instead of having the Action DiT start from Gaussian noise, OSWAM places a small extra set of \"imagination tokens\" (AIT/SIT) in the Video DiT, obtaining a coarse action prior in a single forward pass, which the Action DiT then refines with one denoising step; at the same time, it performs feature distillation from a teacher that can see future frames. This reduces action denoising in the direct-policy world action model (direct-policy WAM) from 10 steps to 1: PDMS on NAVSIM stays at 90.3, the success rate on RoboTwin 2.0 is 90.0% (1.8 points lower than the 10-step Fast-WAM), end-to-end speed improves by about 3x, and latency after compilation is 40–53 ms (RTX 5090).",
+      "summary_en_source": "78170a6f9e12cc48be2347a8ea7cafbb340f3dab4559825ea4b89e5d175e0a46",
+      "code_url": "https://github.com/PolyU-VCLab/OSWAM",
+      "code_checked_at": "2026-11-03",
+      "pdf_url": "pdfs/2610.35850.pdf"
     }
   ],
-  "last_checked_at": "2026-11-02T16:37:03.168955+08:00",
+  "last_checked_at": "2026-11-03T17:55:14.108312+08:00",
   "title": "Embodied AI Daily Papers",
-  "today": "2026-11-02",
+  "today": "2026-11-03",
   "timezone": "Asia/Shanghai"
 }
