@@ -388,7 +388,14 @@
       "summary_en_source": "dd70e06daac813e479f4024ea9a00b233794cdbeed8281ad0faab89e4707c6ec",
       "code_url": "https://github.com/PrimebotTech/PrimeSim",
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2611.04870.pdf"
+      "pdf_url": "pdfs/2611.04870.pdf",
+      "pdf_url_en": "pdfs/2611.04870.en.pdf",
+      "slides_en_source": "eed50c95ce48ddef43537102761ef6b7563a12d1f62d2fb5a35cf959c1f659ea",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.04870/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.04870/deck.en.pdf"
+      }
     },
     {
       "id": "2611.04166",
