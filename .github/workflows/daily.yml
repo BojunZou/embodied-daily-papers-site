@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       refresh_only:
-        description: '只更新页面、英文总结和代码链接，保留已生成论文'
+        description: '更新页面、英文总结/Slides 和代码链接；复用现有中文 PPT'
         type: boolean
         default: false
       date:
@@ -62,11 +62,13 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install document tools
-        if: ${{ !inputs.refresh_only }}
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends libreoffice-impress poppler-utils fonts-noto-cjk libcairo2
           python -m pip install -r engine/requirements.txt
+      - name: Prepare isolated Chinese slide renderer
+        if: ${{ !inputs.refresh_only }}
+        run: |
           docker build -f engine/Dockerfile.render -t paper-reading-render:local engine
       - name: Install Devin CLI
         working-directory: engine
@@ -139,6 +141,9 @@ jobs:
       - name: Prepare English summaries and code links
         working-directory: engine
         run: python -u -m pipeline.metadata
+      - name: Translate existing slides without changing layout
+        working-directory: engine
+        run: python -u -m pipeline.english_slides
       - name: Build static site
         working-directory: engine
         run: python -m pipeline.build --previous-site ../public
