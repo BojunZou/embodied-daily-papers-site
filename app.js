@@ -79,11 +79,11 @@ function paperCard(paper,popular=false) {
   const row=make('div',undefined,'paper-row');
   const title=make('div',undefined,'paper-title');
   const actions=make('div',undefined,'paper-actions');
-  actions.append(anchor('pdf',pdfURL(paper)),anchor('arxiv',safeExternal(paper.arxiv_url)||`https://arxiv.org/abs/${paper.id}`));
+  actions.append(anchor('Slides',pdfURL(paper)),anchor('arXiv',safeExternal(paper.arxiv_url)||`https://arxiv.org/abs/${paper.id}`));
   const code=safeExternal(paper.code_url);
-  if(code && new URL(code).hostname==='github.com') actions.append(anchor('code',code));
-  else {const unavailable=make('span','code','unavailable');unavailable.setAttribute('aria-disabled','true');unavailable.title=t('noCode');actions.append(unavailable);}
-  actions.append(anchor('hf',safeExternal(paper.hf_url)||`https://huggingface.co/papers/${paper.id}`));
+  if(code && new URL(code).hostname==='github.com') actions.append(anchor('Code',code));
+  else {const unavailable=make('span','Code','unavailable');unavailable.setAttribute('aria-disabled','true');unavailable.title=t('noCode');actions.append(unavailable);}
+  actions.append(anchor('HF',safeExternal(paper.hf_url)||`https://huggingface.co/papers/${paper.id}`));
   const toggle=make('button',undefined,'summary-toggle');toggle.type='button';
   toggle.innerHTML='<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>';
   const summary=make('p',language==='en'?paper.summary_en:paper.summary,'paper-summary');
@@ -93,7 +93,7 @@ function paperCard(paper,popular=false) {
   toggle.setAttribute('aria-controls',summary.id);
   function sync() {const expanded=opened.has(paper.id);summary.hidden=!expanded;toggle.setAttribute('aria-expanded',String(expanded));toggle.setAttribute('aria-label',`${t(expanded?'hide':'show')}: ${paper.title}`);}
   toggle.onclick=()=>{opened.has(paper.id)?opened.delete(paper.id):opened.add(paper.id);syncSummaries();};sync();
-  title.append(toggle,make('h3',paper.title));row.append(title,actions);
+  title.append(make('h3',paper.title));actions.append(toggle);row.append(title,actions);
   if(popular) {const likes=make('span',`↑ ${paper.likes??0}`,'paper-likes');likes.setAttribute('aria-label',t('votes',paper.likes??0));row.append(likes);}
   card.append(row,summary);return card;
 }
