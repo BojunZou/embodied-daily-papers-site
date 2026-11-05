@@ -170,6 +170,47 @@
       "pdf_url": "pdfs/2611.04870.pdf"
     },
     {
+      "id": "2611.04166",
+      "title": "Say the Same, Act Differently: Diagnosing and Steering Text-Action Divergence in Reasoning VLAs",
+      "hf_dates": [
+        "2026-11-04"
+      ],
+      "published_at": "2026-11-03",
+      "likes": 1,
+      "arxiv_url": "https://arxiv.org/abs/2611.04166",
+      "hf_url": "https://huggingface.co/papers/2611.04166",
+      "generated_at": "2026-11-05T16:08:16.026887+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "带推理的 VLA 模型里，文本和动作读取的是同一个隐状态，但其中“最能推动动作”的方向几乎和文本损失的梯度正交（Alpamayo 中重叠仅 1.87%，InstructVLA 中 5.28%）。作者把文本梯度从动作方向里投影掉，得到 TNAS 方向，再引导图像对抗扰动沿这个方向走，就能让模型说出一字不差的 rationale，同时把动作改成危险的。在 Alpamayo 上，全图扰动在 52.6% 的场景、局部补丁在 35.1% 的场景中造成了“理由不变的新碰撞”。结论是：rationale 没变，不能证明动作安全，监控必须直接检查动作通道。",
+      "slides": [
+        "slides/2611.04166/slide-01.webp",
+        "slides/2611.04166/slide-02.webp",
+        "slides/2611.04166/slide-03.webp",
+        "slides/2611.04166/slide-04.webp",
+        "slides/2611.04166/slide-05.webp",
+        "slides/2611.04166/slide-06.webp",
+        "slides/2611.04166/slide-07.webp",
+        "slides/2611.04166/slide-08.webp",
+        "slides/2611.04166/slide-09.webp",
+        "slides/2611.04166/slide-10.webp",
+        "slides/2611.04166/slide-11.webp",
+        "slides/2611.04166/slide-12.webp",
+        "slides/2611.04166/slide-13.webp",
+        "slides/2611.04166/slide-14.webp",
+        "slides/2611.04166/slide-15.webp",
+        "slides/2611.04166/slide-16.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.04166/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.04166/deck.pdf"
+      },
+      "summary_en": "In VLA models with reasoning, text and actions read from the same hidden state, yet the directions within it that \"most drive the action\" are nearly orthogonal to the gradient of the text loss (an overlap of only 1.87% in Alpamayo and 5.28% in InstructVLA). The authors project the text gradient out of the action directions to obtain the TNAS direction, and then steer adversarial image perturbations along this direction, which makes the model produce a word-for-word identical rationale while changing the action into a dangerous one. On Alpamayo, full-image perturbations caused \"new collisions with an unchanged rationale\" in 52.6% of scenarios, and local patches did so in 35.1% of scenarios. The conclusion is that an unchanged rationale does not prove the action is safe, and monitoring must directly inspect the action channel.",
+      "summary_en_source": "95b02a0a4d7883b9406e43e42629e0da7bc89366fdc71824fdfa97835b8cfae5",
+      "code_url": "https://github.com/nerfies/nerfies.github.io",
+      "code_checked_at": "2026-11-05",
+      "pdf_url": "pdfs/2611.04166.pdf"
+    },
+    {
       "id": "2611.02497",
       "title": "RoboColosseum: Evaluating Physical Intelligence at Scale In-The-Wild",
       "hf_dates": [
@@ -787,7 +828,7 @@
       "pdf_url": "pdfs/2610.35850.pdf"
     }
   ],
-  "last_checked_at": "2026-11-05T15:35:04.689505+08:00",
+  "last_checked_at": "2026-11-05T16:08:17.178450+08:00",
   "title": "Embodied AI Daily Papers",
   "today": "2026-11-05",
   "timezone": "Asia/Shanghai"
