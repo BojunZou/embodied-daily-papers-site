@@ -2,13 +2,185 @@
   "version": 1,
   "papers": [
     {
+      "id": "2611.06918",
+      "title": "From Pixels to Actions - Towards Native Vision-Language-Action Policies",
+      "hf_dates": [
+        "2026-11-05"
+      ],
+      "published_at": "2026-11-04",
+      "likes": 49,
+      "arxiv_url": "https://arxiv.org/abs/2611.06918",
+      "hf_url": "https://huggingface.co/papers/2611.06918",
+      "generated_at": "2026-11-05T17:42:24.369889+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "NEO-VLA去掉视觉编码器，像素经卷积patch化后与语言共入2B原生骨干，动作专家逐层读取KV；发现控制关键视觉信息常在早期层达峰，冻结骨干即优于编码器式模型，LIBERO-plus达89.7、RoboTwin随机化达69.4。",
+      "slides": [
+        "slides/2611.06918/slide-01.webp",
+        "slides/2611.06918/slide-02.webp",
+        "slides/2611.06918/slide-03.webp",
+        "slides/2611.06918/slide-04.webp",
+        "slides/2611.06918/slide-05.webp",
+        "slides/2611.06918/slide-06.webp",
+        "slides/2611.06918/slide-07.webp",
+        "slides/2611.06918/slide-08.webp",
+        "slides/2611.06918/slide-09.webp",
+        "slides/2611.06918/slide-10.webp",
+        "slides/2611.06918/slide-11.webp",
+        "slides/2611.06918/slide-12.webp",
+        "slides/2611.06918/slide-13.webp",
+        "slides/2611.06918/slide-14.webp",
+        "slides/2611.06918/slide-15.webp",
+        "slides/2611.06918/slide-16.webp",
+        "slides/2611.06918/slide-17.webp",
+        "slides/2611.06918/slide-18.webp",
+        "slides/2611.06918/slide-19.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.06918/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.06918/deck.pdf"
+      },
+      "summary_en": "NEO-VLA removes the vision encoder: pixels are patchified via convolution and fed together with language into a 2B native backbone, while an action expert reads the KV layer by layer. It finds that control-critical visual information often peaks in early layers; even with the backbone frozen, it outperforms encoder-based models, reaching 89.7 on LIBERO-plus and 69.4 on RoboTwin with randomization.",
+      "summary_en_source": "587b39e3dbdd4cedb0a0e0368acbc12254125966753d7765464f46c57e4205e4",
+      "code_url": "https://github.com/EvolvingLMMs-Lab/NEO",
+      "code_checked_at": "2026-11-05",
+      "pdf_url": "pdfs/2611.06918.pdf"
+    },
+    {
+      "id": "2611.06768",
+      "title": "PyRUA-REAL: Robot Exploration and Adaptive Learning through RSI in the Real World",
+      "hf_dates": [
+        "2026-11-05"
+      ],
+      "published_at": "2026-11-04",
+      "likes": 5,
+      "arxiv_url": "https://arxiv.org/abs/2611.06768",
+      "hf_url": "https://huggingface.co/papers/2611.06768",
+      "generated_at": "2026-11-05T17:52:21.642424+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "**PyRUA-REAL 让\"研究员 + 工程师\"两个编程智能体直接在真实双臂 Franka 上反复试验、诊断、改代码。它把试验经验沉淀成三层记忆（事实 / 经验教训 / 可复用代码），把每个任务最终固化成一段运行时不需要调用大模型的程序。8 个真机任务的开发期平均成功率为 91.1%（其中网线插入仍需在线智能体辅助），RoboDojo 42 个任务的成功率为 84.4%，执行速度比在线智能体快约 5–11 倍。** 这篇论文更像一份实证研究报告，讲的是具身 RSI 的过程该怎么组织（分工、反馈、任务规格、技能复用），而不是提出一个新算法。",
+      "slides": [
+        "slides/2611.06768/slide-01.webp",
+        "slides/2611.06768/slide-02.webp",
+        "slides/2611.06768/slide-03.webp",
+        "slides/2611.06768/slide-04.webp",
+        "slides/2611.06768/slide-05.webp",
+        "slides/2611.06768/slide-06.webp",
+        "slides/2611.06768/slide-07.webp",
+        "slides/2611.06768/slide-08.webp",
+        "slides/2611.06768/slide-09.webp",
+        "slides/2611.06768/slide-10.webp",
+        "slides/2611.06768/slide-11.webp",
+        "slides/2611.06768/slide-12.webp",
+        "slides/2611.06768/slide-13.webp",
+        "slides/2611.06768/slide-14.webp",
+        "slides/2611.06768/slide-15.webp",
+        "slides/2611.06768/slide-16.webp",
+        "slides/2611.06768/slide-17.webp",
+        "slides/2611.06768/slide-18.webp",
+        "slides/2611.06768/slide-19.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.06768/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.06768/deck.pdf"
+      },
+      "summary_en": "**PyRUA-REAL lets two coding agents, a \"researcher + engineer\" pair, repeatedly experiment, diagnose, and modify code directly on a real bimanual Franka. It distills experimental experience into a three-layer memory (facts / lessons learned / reusable code), and ultimately consolidates each task into a program that does not need to call a large model at runtime. The average development-time success rate across 8 real-robot tasks is 91.1% (with cable insertion still requiring online agent assistance), the success rate on 42 RoboDojo tasks is 84.4%, and execution is about 5-11 times faster than the online agent.** This paper is more of an empirical study report about how the process of embodied RSI should be organized (division of labor, feedback, task specification, skill reuse), rather than a proposal of a new algorithm.",
+      "summary_en_source": "f63dcd0981f9f52e6a46acb7e78d05486588f6df5df3c92177f6804754e4695d",
+      "code_url": "https://github.com/DAGroup-PKU/PyRUA-Lean",
+      "code_checked_at": "2026-11-05",
+      "pdf_url": "pdfs/2611.06768.pdf"
+    },
+    {
+      "id": "2611.05320",
+      "title": "PyRUA-DataFarm: LLM Agent as a Cost-Efficient Teleoperator for Real-Ready Robot Data",
+      "hf_dates": [
+        "2026-11-05"
+      ],
+      "published_at": "2026-11-03",
+      "likes": 20,
+      "arxiv_url": "https://arxiv.org/abs/2611.05320",
+      "hf_url": "https://huggingface.co/papers/2611.05320",
+      "generated_at": "2026-11-05T17:42:08.364928+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "**只给一条真机标定录像和一句任务需求，编码智能体就能自动在仿真里重建任务、写出专家控制器和隐藏判据。仿真器提供精确动作，以真实图像为条件的视频模型把每条轨迹渲染成多视角照片级视频，再由独立审查者逐条把关。用这样得到的 100 条“农场数据”训练 π0.5，在真机 5 个双臂任务上达到 93/100 次成功，同量遥操作数据为 84/100；换上没见过的桌布和彩色灯光后是 87 vs 46。每个任务的一次性成本约 21 美元 API 费加 5 美元渲染合同，之后每条数据约 0.8 美元。**",
+      "slides": [
+        "slides/2611.05320/slide-01.webp",
+        "slides/2611.05320/slide-02.webp",
+        "slides/2611.05320/slide-03.webp",
+        "slides/2611.05320/slide-04.webp",
+        "slides/2611.05320/slide-05.webp",
+        "slides/2611.05320/slide-06.webp",
+        "slides/2611.05320/slide-07.webp",
+        "slides/2611.05320/slide-08.webp",
+        "slides/2611.05320/slide-09.webp",
+        "slides/2611.05320/slide-10.webp",
+        "slides/2611.05320/slide-11.webp",
+        "slides/2611.05320/slide-12.webp",
+        "slides/2611.05320/slide-13.webp",
+        "slides/2611.05320/slide-14.webp",
+        "slides/2611.05320/slide-15.webp",
+        "slides/2611.05320/slide-16.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.05320/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.05320/deck.pdf"
+      },
+      "summary_en": "**Given just one real-robot calibration recording and a one-sentence task requirement, a coding agent can automatically reconstruct the task in simulation and write an expert controller and hidden success criteria. The simulator provides precise actions, a video model conditioned on real images renders each trajectory into multi-view photorealistic video, and an independent reviewer then vets each trajectory one by one. Training π0.5 on 100 pieces of \"farm data\" obtained this way achieves 93/100 successes across 5 real-robot bimanual tasks, versus 84/100 for the same amount of teleoperation data; with unseen tablecloths and colored lighting, it is 87 vs 46. The one-time cost per task is about $21 in API fees plus a $5 rendering contract, after which each piece of data costs about $0.8.**",
+      "summary_en_source": "25b74d85ac6d1c58bd7f3db33e3707f8ce9adff68c64e749eaf5881e48667ca1",
+      "code_url": "https://github.com/DAGroup-PKU/PyRUA-Lean",
+      "code_checked_at": "2026-11-05",
+      "pdf_url": "pdfs/2611.05320.pdf"
+    },
+    {
+      "id": "2611.04391",
+      "title": "Human-to-Robot Transfer via Bridging Representation and Action Space in VLAs",
+      "hf_dates": [
+        "2026-11-05"
+      ],
+      "published_at": "2026-11-03",
+      "likes": 12,
+      "arxiv_url": "https://arxiv.org/abs/2611.04391",
+      "hf_url": "https://huggingface.co/papers/2611.04391",
+      "generated_at": "2026-11-05T17:43:21.313840+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "H2RB 在机器人数据上预训练好的 VLA 上做了两处“桥接”：感知侧用“手腕＋五指尖几何”去监督 VLM 特征，动作侧用“共享编码器＋人/机器人各自一个解码器”的潜动作 tokenizer。这样只用**不成对**的人手视频，就能教真机新物体、新技能。OpenArm 上物体迁移从 8.0 提到 51.8，基线迁移不了的开/关空气炸锅技能拿到 62.7（满分 100，按完成进度加权的分数）。",
+      "slides": [
+        "slides/2611.04391/slide-01.webp",
+        "slides/2611.04391/slide-02.webp",
+        "slides/2611.04391/slide-03.webp",
+        "slides/2611.04391/slide-04.webp",
+        "slides/2611.04391/slide-05.webp",
+        "slides/2611.04391/slide-06.webp",
+        "slides/2611.04391/slide-07.webp",
+        "slides/2611.04391/slide-08.webp",
+        "slides/2611.04391/slide-09.webp",
+        "slides/2611.04391/slide-10.webp",
+        "slides/2611.04391/slide-11.webp",
+        "slides/2611.04391/slide-12.webp",
+        "slides/2611.04391/slide-13.webp",
+        "slides/2611.04391/slide-14.webp",
+        "slides/2611.04391/slide-15.webp",
+        "slides/2611.04391/slide-16.webp",
+        "slides/2611.04391/slide-17.webp",
+        "slides/2611.04391/slide-18.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.04391/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.04391/deck.pdf"
+      },
+      "summary_en": "H2RB builds two \"bridges\" on top of a VLA pretrained on robot data: on the perception side, it uses \"wrist + five-fingertip geometry\" to supervise VLM features; on the action side, it uses a latent action tokenizer with \"a shared encoder + separate decoders for human and robot\". This way, using only **unpaired** human hand videos, it can teach a real robot new objects and new skills. On OpenArm, object transfer improves from 8.0 to 51.8, and the skill of opening/closing an air fryer, which the baseline cannot transfer, scores 62.7 (out of 100, a score weighted by completion progress).",
+      "summary_en_source": "74f3447b4cdc4276610fd9e69fe607aebf4c8ea8e57da8bb43eecd4ecb6214c0",
+      "code_url": "https://github.com/jun-brro/h2rb-code",
+      "code_checked_at": "2026-11-05",
+      "pdf_url": "pdfs/2611.04391.pdf"
+    },
+    {
       "id": "2611.05377",
       "title": "DreamX: Video Diffusion Model is a Universal Latent Action Learner",
       "hf_dates": [
         "2026-11-04"
       ],
       "published_at": "2026-11-03",
-      "likes": 52,
+      "likes": 54,
       "arxiv_url": "https://arxiv.org/abs/2611.05377",
       "hf_url": "https://huggingface.co/papers/2611.05377",
       "generated_at": "2026-11-05T14:49:38.356942+08:00",
@@ -49,7 +221,7 @@
         "2026-11-04"
       ],
       "published_at": "2026-11-03",
-      "likes": 87,
+      "likes": 79,
       "arxiv_url": "https://arxiv.org/abs/2611.05275",
       "hf_url": "https://huggingface.co/papers/2611.05275",
       "generated_at": "2026-11-05T15:35:03.168274+08:00",
@@ -217,7 +389,7 @@
         "2026-11-04"
       ],
       "published_at": "2026-11-02",
-      "likes": 45,
+      "likes": 46,
       "arxiv_url": "https://arxiv.org/abs/2611.02497",
       "hf_url": "https://huggingface.co/papers/2611.02497",
       "generated_at": "2026-11-05T14:50:21.365960+08:00",
@@ -263,7 +435,7 @@
         "2026-11-04"
       ],
       "published_at": "2026-10-23",
-      "likes": 10,
+      "likes": 14,
       "arxiv_url": "https://arxiv.org/abs/2610.00854",
       "hf_url": "https://huggingface.co/papers/2610.00854",
       "generated_at": "2026-11-05T14:59:01.132762+08:00",
@@ -302,7 +474,7 @@
         "2026-11-03"
       ],
       "published_at": "2026-11-01",
-      "likes": 25,
+      "likes": 26,
       "arxiv_url": "https://arxiv.org/abs/2611.01815",
       "hf_url": "https://huggingface.co/papers/2611.01815",
       "generated_at": "2026-11-05T14:47:04.302020+08:00",
@@ -341,7 +513,7 @@
         "2026-11-03"
       ],
       "published_at": "2026-11-01",
-      "likes": 45,
+      "likes": 47,
       "arxiv_url": "https://arxiv.org/abs/2611.01560",
       "hf_url": "https://huggingface.co/papers/2611.01560",
       "generated_at": "2026-11-03T17:44:11.984148+08:00",
@@ -586,7 +758,7 @@
         "2026-11-02"
       ],
       "published_at": "2026-10-29",
-      "likes": 20,
+      "likes": 19,
       "arxiv_url": "https://arxiv.org/abs/2610.40799",
       "hf_url": "https://huggingface.co/papers/2610.40799",
       "generated_at": "2026-11-02T16:30:01.432394+08:00",
@@ -828,7 +1000,7 @@
       "pdf_url": "pdfs/2610.35850.pdf"
     }
   ],
-  "last_checked_at": "2026-11-05T16:08:17.178450+08:00",
+  "last_checked_at": "2026-11-05T17:52:23.753540+08:00",
   "title": "Embodied AI Daily Papers",
   "today": "2026-11-05",
   "timezone": "Asia/Shanghai"
