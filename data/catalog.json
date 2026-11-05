@@ -8,7 +8,7 @@
         "2026-11-04"
       ],
       "published_at": "2026-11-03",
-      "likes": 51,
+      "likes": 52,
       "arxiv_url": "https://arxiv.org/abs/2611.05377",
       "hf_url": "https://huggingface.co/papers/2611.05377",
       "generated_at": "2026-11-05T14:49:38.356942+08:00",
@@ -41,6 +41,47 @@
       "code_url": null,
       "code_checked_at": "2026-11-05",
       "pdf_url": "pdfs/2611.05377.pdf"
+    },
+    {
+      "id": "2611.05275",
+      "title": "Route Anything: A Study of Model and Policy Routing for General-Purpose AI Systems",
+      "hf_dates": [
+        "2026-11-04"
+      ],
+      "published_at": "2026-11-03",
+      "likes": 87,
+      "arxiv_url": "https://arxiv.org/abs/2611.05275",
+      "hf_url": "https://huggingface.co/papers/2611.05275",
+      "generated_at": "2026-11-05T15:35:03.168274+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "作者先建了一套统一的路由理论（价格、参考模型、信息阶梯、可认证的质量下限），再把 452 个候选配置放到 25 个基准的同一批输入上跑，得到 37 万条打分记录，覆盖文本、图像、视频、语音、代码智能体和机器人。结论是：**按输入挑最优候选的上限确实不低（oracle 比最佳固定候选高 5.4 分），但学出来的路由器在质量上只多拿到很小一部分（+0.3 分）。路由真正可靠的收益是\"便宜的路线已经够好\"：在质量基本持平的前提下，效率平均是参考模型的 8.82 倍。**",
+      "slides": [
+        "slides/2611.05275/slide-01.webp",
+        "slides/2611.05275/slide-02.webp",
+        "slides/2611.05275/slide-03.webp",
+        "slides/2611.05275/slide-04.webp",
+        "slides/2611.05275/slide-05.webp",
+        "slides/2611.05275/slide-06.webp",
+        "slides/2611.05275/slide-07.webp",
+        "slides/2611.05275/slide-08.webp",
+        "slides/2611.05275/slide-09.webp",
+        "slides/2611.05275/slide-10.webp",
+        "slides/2611.05275/slide-11.webp",
+        "slides/2611.05275/slide-12.webp",
+        "slides/2611.05275/slide-13.webp",
+        "slides/2611.05275/slide-14.webp",
+        "slides/2611.05275/slide-15.webp",
+        "slides/2611.05275/slide-16.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.05275/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.05275/deck.pdf"
+      },
+      "summary_en": "The authors first build a unified theory of routing (prices, reference models, an information ladder, and certifiable quality floors), then run 452 candidate configurations on the same set of inputs across 25 benchmarks, obtaining 370,000 scored records covering text, images, video, speech, coding agents, and robotics. The conclusion is: **the ceiling for picking the best candidate per input is indeed not low (the oracle is 5.4 points higher than the best fixed candidate), but learned routers capture only a very small portion of this in quality (+0.3 points). The truly reliable gain from routing is that \"the cheap route is already good enough\": with quality roughly on par, efficiency is on average 8.82 times that of the reference model.**",
+      "summary_en_source": "0a29b2fc9085c19181a76137d2380e8ea7b4d02a662666a1e8fc6b5792734963",
+      "code_url": "https://github.com/InfRec-Cardinal/route-anything",
+      "code_checked_at": "2026-11-05",
+      "pdf_url": "pdfs/2611.05275.pdf"
     },
     {
       "id": "2611.05163",
@@ -746,7 +787,7 @@
       "pdf_url": "pdfs/2610.35850.pdf"
     }
   ],
-  "last_checked_at": "2026-11-05T15:03:54.839830+08:00",
+  "last_checked_at": "2026-11-05T15:35:04.689505+08:00",
   "title": "Embodied AI Daily Papers",
   "today": "2026-11-05",
   "timezone": "Asia/Shanghai"
