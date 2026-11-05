@@ -23,6 +23,11 @@ on:
         default: '0'
         required: true
         type: string
+      paper_ids:
+        description: '仅补跑已确认入选的 HF 论文 ID，逗号分隔；留空按日正常筛选'
+        default: ''
+        required: false
+        type: string
 
 concurrency:
   group: embodied-daily-publication
@@ -113,12 +118,15 @@ jobs:
           INPUT_DATE: ${{ inputs.date }}
           INPUT_DAYS: ${{ inputs.days || '3' }}
           INPUT_LIMIT: ${{ inputs.limit || '0' }}
+          INPUT_PAPER_IDS: ${{ inputs.paper_ids }}
         run: |
           python - <<'PY'
           import os, subprocess, sys
           args = [sys.executable, '-u', '-m', 'pipeline.main', '--days', os.environ['INPUT_DAYS'], '--limit', os.environ['INPUT_LIMIT']]
           if os.environ.get('INPUT_DATE'):
               args += ['--date', os.environ['INPUT_DATE']]
+          if os.environ.get('INPUT_PAPER_IDS'):
+              args += ['--paper-ids', os.environ['INPUT_PAPER_IDS']]
           subprocess.run(args, check=True)
           PY
       - name: Prepare English summaries and code links
