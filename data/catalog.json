@@ -626,7 +626,14 @@
       "summary_en_source": "adcfbdbedcdc903b35a3135a60f27af2f16cf9f09f7d57288c976ba07619e94b",
       "code_url": "https://github.com/Open-RUA/uni-robot-agent",
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2611.01560.pdf"
+      "pdf_url": "pdfs/2611.01560.pdf",
+      "pdf_url_en": "pdfs/2611.01560.en.pdf",
+      "slides_en_source": "4221a76c09cd830f507ef90815d7fa933da510112ebe81859eae8b89f4cf8652",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.01560/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.01560/deck.en.pdf"
+      }
     },
     {
       "id": "2610.41216",
@@ -668,7 +675,14 @@
       "summary_en_source": "5e831269eba9f1efaaefde83998087f0847fcd09446a834f54cedea6c2aca7b1",
       "code_url": "https://github.com/Garfield-kh/TinyAstral",
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2610.41216.pdf"
+      "pdf_url": "pdfs/2610.41216.pdf",
+      "pdf_url_en": "pdfs/2610.41216.en.pdf",
+      "slides_en_source": "c4d256d1ea38b37658d47711f70291fdad6d752e9de74c190494acbc697f4348",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.41216/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.41216/deck.en.pdf"
+      }
     },
     {
       "id": "2610.39278",
@@ -707,7 +721,14 @@
       "summary_en_source": "b4607e9382ef8bea4cc391843188ea16cc48f81477bf0aa6bb726575a855a297",
       "code_url": "https://github.com/worldflow-rbs/worldflow",
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2610.39278.pdf"
+      "pdf_url": "pdfs/2610.39278.pdf",
+      "pdf_url_en": "pdfs/2610.39278.en.pdf",
+      "slides_en_source": "0677f5943d23ad33835812435b3af14b284badf3008f05b7eaf0709a4a38ed6b",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.39278/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.39278/deck.en.pdf"
+      }
     },
     {
       "id": "2610.42141",
@@ -888,7 +909,14 @@
       "summary_en_source": "b916b5960cd72a65dfea197f608e7fbded7b14ceb21c095bd96a3ce03a4cafcd",
       "code_url": "https://github.com/waltstephen/CaPtain",
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2610.40799.pdf"
+      "pdf_url": "pdfs/2610.40799.pdf",
+      "pdf_url_en": "pdfs/2610.40799.en.pdf",
+      "slides_en_source": "a662747b1eb6d67c46405000fb3aea4ab81488abf3afcf0af818fa010917b0d5",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40799/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40799/deck.en.pdf"
+      }
     },
     {
       "id": "2610.40748",
@@ -976,7 +1004,14 @@
       "summary_en_source": "47b2ba68862d91065a9d646000494b418b4f256548faf750c0bdbf8b2968fa70",
       "code_url": "https://github.com/yyyybq/Probing_Spatial_State_Release",
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2610.40636.pdf"
+      "pdf_url": "pdfs/2610.40636.pdf",
+      "pdf_url_en": "pdfs/2610.40636.en.pdf",
+      "slides_en_source": "e25fc695005ae46d7254fc6676b4419f26b9300e8d3f792a6906d0d28178de16",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40636/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40636/deck.en.pdf"
+      }
     },
     {
       "id": "2610.40373",
@@ -1016,7 +1051,14 @@
       "summary_en_source": "f2627bcfa2d0694e60b695681111e70c3a1f9f12326929d62b7033ae3060a923",
       "code_url": null,
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2610.40373.pdf"
+      "pdf_url": "pdfs/2610.40373.pdf",
+      "pdf_url_en": "pdfs/2610.40373.en.pdf",
+      "slides_en_source": "5a9552492ddeaa5cc377bc6ab2c6bd1935be169b259a432adc415314898df71d",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40373/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40373/deck.en.pdf"
+      }
     },
     {
       "id": "2610.37393",
