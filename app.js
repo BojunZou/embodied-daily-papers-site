@@ -31,7 +31,8 @@ function anchor(text, href, className) {const a=make('a',text,className);a.href=
 function pdfURL(paper) {
   // A same-origin PDF is served inline by Pages instead of downloaded as a Release attachment.
   if (!/^\d{4}\.\d{4,5}(?:v\d+)?$/.test(paper.id)) throw Error(t('invalidData'));
-  return new URL(`./pdfs/${paper.id}.pdf`,location.href).href;
+  if(language==='en' && !paper.pdf_url_en) return null;
+  return new URL(`./pdfs/${paper.id}${language==='en'?'.en':''}.pdf`,location.href).href;
 }
 function setTheme(theme) {
   document.documentElement.dataset.theme=theme;
@@ -79,7 +80,10 @@ function paperCard(paper,popular=false) {
   const row=make('div',undefined,'paper-row');
   const title=make('div',undefined,'paper-title');
   const actions=make('div',undefined,'paper-actions');
-  actions.append(anchor('Slides',pdfURL(paper)),anchor('arXiv',safeExternal(paper.arxiv_url)||`https://arxiv.org/abs/${paper.id}`));
+  const pdf=pdfURL(paper);
+  if(pdf) actions.append(anchor('Slides',pdf));
+  else {const unavailable=make('span','Slides','unavailable');unavailable.setAttribute('aria-disabled','true');unavailable.title='English slides are being prepared.';actions.append(unavailable);}
+  actions.append(anchor('arXiv',safeExternal(paper.arxiv_url)||`https://arxiv.org/abs/${paper.id}`));
   const code=safeExternal(paper.code_url);
   if(code && new URL(code).hostname==='github.com') actions.append(anchor('Code',code));
   else {const unavailable=make('span','Code','unavailable');unavailable.setAttribute('aria-disabled','true');unavailable.title=t('noCode');actions.append(unavailable);}
@@ -165,6 +169,8 @@ try {
     document.documentElement.lang=language==='zh'?'zh-CN':'en';
     const paper=catalog.papers.find(p=>p.id===initial.get('id'));
     if(!paper) throw Error(t('missing'));
-    $('#status').textContent=t('opening');location.replace(pdfURL(paper));
+    const pdf=pdfURL(paper);
+    if(pdf) {$('#status').textContent=t('opening');location.replace(pdf);}
+    else $('#status').textContent='English slides are being prepared.';
   } else render();
 } catch(error) {$('#status').textContent=error.message;}

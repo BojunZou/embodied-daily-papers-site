@@ -43,7 +43,14 @@
       "summary_en_source": "587b39e3dbdd4cedb0a0e0368acbc12254125966753d7765464f46c57e4205e4",
       "code_url": "https://github.com/EvolvingLMMs-Lab/NEO",
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2611.06918.pdf"
+      "pdf_url": "pdfs/2611.06918.pdf",
+      "pdf_url_en": "pdfs/2611.06918.en.pdf",
+      "slides_en_source": "a6a900a052490d55e1ec4c88fe9d617d09d27278d917d41c3a8c253f9d7996ff",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.06918/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.06918/deck.en.pdf"
+      }
     },
     {
       "id": "2611.06768",
@@ -87,7 +94,14 @@
       "summary_en_source": "f63dcd0981f9f52e6a46acb7e78d05486588f6df5df3c92177f6804754e4695d",
       "code_url": "https://github.com/DAGroup-PKU/PyRUA-Lean",
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2611.06768.pdf"
+      "pdf_url": "pdfs/2611.06768.pdf",
+      "pdf_url_en": "pdfs/2611.06768.en.pdf",
+      "slides_en_source": "9ee2ce6af981700d65189489f19f808b2794930c7c9eacc380e773f6d13a24ea",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.06768/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.06768/deck.en.pdf"
+      }
     },
     {
       "id": "2611.05320",
@@ -128,7 +142,14 @@
       "summary_en_source": "25b74d85ac6d1c58bd7f3db33e3707f8ce9adff68c64e749eaf5881e48667ca1",
       "code_url": "https://github.com/DAGroup-PKU/PyRUA-Lean",
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2611.05320.pdf"
+      "pdf_url": "pdfs/2611.05320.pdf",
+      "pdf_url_en": "pdfs/2611.05320.en.pdf",
+      "slides_en_source": "ea5af734cb35c7afee03b7fdc80e82ceba4fea7b011d25bd3a9b99e1ea6012ba",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.05320/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.05320/deck.en.pdf"
+      }
     },
     {
       "id": "2611.04391",
@@ -171,7 +192,14 @@
       "summary_en_source": "74f3447b4cdc4276610fd9e69fe607aebf4c8ea8e57da8bb43eecd4ecb6214c0",
       "code_url": "https://github.com/jun-brro/h2rb-code",
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2611.04391.pdf"
+      "pdf_url": "pdfs/2611.04391.pdf",
+      "pdf_url_en": "pdfs/2611.04391.en.pdf",
+      "slides_en_source": "dd4b963f7cdc91df8d80b6aa2d47de286c1ff0c6dbfa4fd559391108154110a8",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.04391/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.04391/deck.en.pdf"
+      }
     },
     {
       "id": "2611.05377",
@@ -212,7 +240,14 @@
       "summary_en_source": "d160f031034a8cb9213a3eed7364936ef97707489bea8b94729b991f8065eeff",
       "code_url": null,
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2611.05377.pdf"
+      "pdf_url": "pdfs/2611.05377.pdf",
+      "pdf_url_en": "pdfs/2611.05377.en.pdf",
+      "slides_en_source": "5a09959b742f7fe5a4e95acb6af8fdb0d64016310799dd327c1909d11fdac658",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.05377/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.05377/deck.en.pdf"
+      }
     },
     {
       "id": "2611.05275",
@@ -253,7 +288,14 @@
       "summary_en_source": "0a29b2fc9085c19181a76137d2380e8ea7b4d02a662666a1e8fc6b5792734963",
       "code_url": "https://github.com/InfRec-Cardinal/route-anything",
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2611.05275.pdf"
+      "pdf_url": "pdfs/2611.05275.pdf",
+      "pdf_url_en": "pdfs/2611.05275.en.pdf",
+      "slides_en_source": "408608c4fc8e30fcfef986702530d29f33923f037993879fb5389ba2410ecaf8",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.05275/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.05275/deck.en.pdf"
+      }
     },
     {
       "id": "2611.05163",
@@ -294,7 +336,14 @@
       "summary_en_source": "5a7df8fbfb0d101bdf7cc3bc0dc5254b50a27f97d1712b73911c0ee48c052a5d",
       "code_url": "https://github.com/ryan-seungyong-lee/RoboTryOn",
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2611.05163.pdf"
+      "pdf_url": "pdfs/2611.05163.pdf",
+      "pdf_url_en": "pdfs/2611.05163.en.pdf",
+      "slides_en_source": "48f491c4a670921a67c74132869012b2dc00e7ec1505c7eebf28f2af0dd2e1e3",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.05163/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.05163/deck.en.pdf"
+      }
     },
     {
       "id": "2611.04870",
@@ -380,7 +429,14 @@
       "summary_en_source": "95b02a0a4d7883b9406e43e42629e0da7bc89366fdc71824fdfa97835b8cfae5",
       "code_url": "https://github.com/nerfies/nerfies.github.io",
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2611.04166.pdf"
+      "pdf_url": "pdfs/2611.04166.pdf",
+      "pdf_url_en": "pdfs/2611.04166.en.pdf",
+      "slides_en_source": "51675952c8db9edefd72166b3d09bc5cbe9fdd32e3103644dfd3a7b35a94ae35",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.04166/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.04166/deck.en.pdf"
+      }
     },
     {
       "id": "2611.02497",
@@ -426,7 +482,14 @@
       "summary_en_source": "2c6279176d837cf28b91d3fe5b9336bf6acdcfc37b066e9a9b55ca5c793b7dc8",
       "code_url": "https://github.com/RoboColosseum/robocolosseum-client",
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2611.02497.pdf"
+      "pdf_url": "pdfs/2611.02497.pdf",
+      "pdf_url_en": "pdfs/2611.02497.en.pdf",
+      "slides_en_source": "188ef7febd438a779dd7f227b2dbd2d05030a203cc18ac54257a1815dc80ff19",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.02497/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.02497/deck.en.pdf"
+      }
     },
     {
       "id": "2610.00854",
@@ -465,7 +528,14 @@
       "summary_en_source": "a8207d35f43eecde8b35c3600ac84135088adfb958dcad99e59f6a5e68d39c09",
       "code_url": "https://github.com/embodied-agent-arena/embodied-agent-arena",
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2610.00854.pdf"
+      "pdf_url": "pdfs/2610.00854.pdf",
+      "pdf_url_en": "pdfs/2610.00854.en.pdf",
+      "slides_en_source": "6ffff7870708d81126ae2538bcc979167bf420854179ede5698af8e9aedff45c",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.00854/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.00854/deck.en.pdf"
+      }
     },
     {
       "id": "2611.01815",
@@ -504,7 +574,14 @@
       "summary_en_source": "c4f37f88cab50440aba5f154c3820388c54d302d0f4d8852410426e2d0574bc7",
       "code_url": "https://github.com/3-ml/jepa-surprise",
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2611.01815.pdf"
+      "pdf_url": "pdfs/2611.01815.pdf",
+      "pdf_url_en": "pdfs/2611.01815.en.pdf",
+      "slides_en_source": "341fc72bbaf19821dac8baea87581b1c9e2456702a29ca099e2666d2f7a2b367",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.01815/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.01815/deck.en.pdf"
+      }
     },
     {
       "id": "2611.01560",
@@ -670,7 +747,14 @@
       "summary_en_source": "58360f08d973582de774e8fa14c5cbaf362261afb6cc4047fe0125d1c7f30b09",
       "code_url": "https://github.com/roboarchitect-ai/RoboArchitect",
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2610.42141.pdf"
+      "pdf_url": "pdfs/2610.42141.pdf",
+      "pdf_url_en": "pdfs/2610.42141.en.pdf",
+      "slides_en_source": "532aaf1ecfe812edcb94fcc7f0e9668f7f96f61c91235744e5fb15b3293ba7a5",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.42141/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.42141/deck.en.pdf"
+      }
     },
     {
       "id": "2610.42096",
@@ -707,7 +791,14 @@
       "summary_en_source": "040d7182bd77ece70dfc97c6e41b60890d1817d0f216c31ab52028837a7dd063",
       "code_url": null,
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2610.42096.pdf"
+      "pdf_url": "pdfs/2610.42096.pdf",
+      "pdf_url_en": "pdfs/2610.42096.en.pdf",
+      "slides_en_source": "0231c7f12421ca04072195c24bdbee653ffcefba0eb90b21932a8cd0287351ed",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.42096/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.42096/deck.en.pdf"
+      }
     },
     {
       "id": "2610.42053",
@@ -749,7 +840,14 @@
       "summary_en_source": "ac2b35bba4922e4416dc2c5f1abbff6f99bf9945578d21945addd75508b36eed",
       "code_url": null,
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2610.42053.pdf"
+      "pdf_url": "pdfs/2610.42053.pdf",
+      "pdf_url_en": "pdfs/2610.42053.en.pdf",
+      "slides_en_source": "987ae0b0ac27f917c754073c9af4399fa7926a00193c36980579e2401325cf03",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.42053/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.42053/deck.en.pdf"
+      }
     },
     {
       "id": "2610.40799",
@@ -831,7 +929,14 @@
       "summary_en_source": "5553162e08c10bc1516d4b1c7eaf9d71e2eb23d17930ec31fad2d981cfbc4e0d",
       "code_url": null,
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2610.40748.pdf"
+      "pdf_url": "pdfs/2610.40748.pdf",
+      "pdf_url_en": "pdfs/2610.40748.en.pdf",
+      "slides_en_source": "c71197a0798c3ecad1b31f6d459386dffd68eb2ffe408f97441fdc643a33695c",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40748/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.40748/deck.en.pdf"
+      }
     },
     {
       "id": "2610.40636",
@@ -952,7 +1057,14 @@
       "summary_en_source": "4f65d1791c67563557a34b5ed4fe00e957e47d79da9b49097de9fe036cbc3664",
       "code_url": "https://github.com/google-deepmind/mujoco_menagerie",
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2610.37393.pdf"
+      "pdf_url": "pdfs/2610.37393.pdf",
+      "pdf_url_en": "pdfs/2610.37393.en.pdf",
+      "slides_en_source": "8add463e4ed6cf5059abf74b64ad80c63d2cdf43ba9ad42ef2eaa94e663234c1",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.37393/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.37393/deck.en.pdf"
+      }
     },
     {
       "id": "2610.35850",
@@ -997,7 +1109,14 @@
       "summary_en_source": "78170a6f9e12cc48be2347a8ea7cafbb340f3dab4559825ea4b89e5d175e0a46",
       "code_url": "https://github.com/PolyU-VCLab/OSWAM",
       "code_checked_at": "2026-11-05",
-      "pdf_url": "pdfs/2610.35850.pdf"
+      "pdf_url": "pdfs/2610.35850.pdf",
+      "pdf_url_en": "pdfs/2610.35850.en.pdf",
+      "slides_en_source": "7cc9385147d598e7504db4f7130496d877b2a2905e369bddc910185a74811084",
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.35850/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2610.35850/deck.en.pdf"
+      }
     }
   ],
   "last_checked_at": "2026-11-05T17:52:23.753540+08:00",
