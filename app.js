@@ -10,6 +10,8 @@ const messages = {
   en: {skip:'Skip to papers',daily:'Daily papers',popular:'Popular papers',navigation:'Main navigation',theme:'Background color',light:'White background',dark:'Black background',list:'Paper list',loading:'Loading papers…',loadError:'Unable to load papers. Please refresh and try again.',invalidData:'Paper data is temporarily unavailable.',empty:'No published paper readings in this period.',preparing:'The first paper readings are being prepared.',chooseWeek:'Choose a week',previousWeek:'Previous week',nextWeek:'Next week',papers:n=>`${n} ${n===1?'paper':'papers'}`,period:n=>`Last ${n} days`,popularTitle:n=>`Popular · last ${n} days`,show:'Show summary',hide:'Hide summary',noCode:'No public code available',ranking:'Ranked by current cumulative Hugging Face upvotes. Up to 12 papers per period.',votes:n=>`${n} HF upvotes`,missing:'Paper not found',opening:'Opening PDF…'}
 };
 const t = (key, value) => typeof messages[language][key] === 'function' ? messages[language][key](value) : messages[language][key];
+Object.assign(messages.zh, {showAll:'展开全部总结',hideAll:'收起全部总结'});
+Object.assign(messages.en, {showAll:'Expand all summaries',hideAll:'Collapse all summaries'});
 const make = (tag, text, className) => {
   const element = document.createElement(tag);
   if (text !== undefined) element.textContent = text;
@@ -53,10 +55,29 @@ let catalog=null;
 let selectedWeek=null;
 let days=initial.get('days')==='30'?30:7;
 const opened=new Set();
+function syncSummaries() {
+  const cards=[...document.querySelectorAll('.paper-card')];
+  for(const card of cards) {
+    const expanded=opened.has(card.dataset.id);
+    const button=card.querySelector('.summary-toggle');
+    card.querySelector('.paper-summary').hidden=!expanded;
+    button.setAttribute('aria-expanded',String(expanded));
+    button.setAttribute('aria-label',`${t(expanded?'hide':'show')}: ${card.querySelector('h3').textContent}`);
+  }
+  const button=$('#toggle-all-summaries');
+  if(button) {
+    const expanded=cards.length>0 && cards.every(card=>opened.has(card.dataset.id));
+    button.disabled=cards.length===0;
+    button.setAttribute('aria-pressed',String(expanded));
+    button.setAttribute('aria-label',t(expanded?'hideAll':'showAll'));
+    button.title=t(expanded?'hideAll':'showAll');
+  }
+}
 function updateURL(key,value) {const url=new URL(location.href);url.searchParams.set(key,value);url.searchParams.delete('date');history.replaceState(null,'',url);}
 function paperCard(paper,popular=false) {
   const card=make('article',undefined,'paper-card');card.dataset.id=paper.id;
-  const row=make('div',undefined,'paper-row');row.append(make('h3',paper.title));
+  const row=make('div',undefined,'paper-row');
+  const title=make('div',undefined,'paper-title');
   const actions=make('div',undefined,'paper-actions');
   actions.append(anchor('pdf',pdfURL(paper)),anchor('arxiv',safeExternal(paper.arxiv_url)||`https://arxiv.org/abs/${paper.id}`));
   const code=safeExternal(paper.code_url);
@@ -71,8 +92,8 @@ function paperCard(paper,popular=false) {
   summary.id=`summary-${paper.id}-${$('#papers').querySelectorAll('.paper-card').length}`;
   toggle.setAttribute('aria-controls',summary.id);
   function sync() {const expanded=opened.has(paper.id);summary.hidden=!expanded;toggle.setAttribute('aria-expanded',String(expanded));toggle.setAttribute('aria-label',`${t(expanded?'hide':'show')}: ${paper.title}`);}
-  toggle.onclick=()=>{opened.has(paper.id)?opened.delete(paper.id):opened.add(paper.id);sync();};sync();
-  actions.append(toggle);row.append(actions);
+  toggle.onclick=()=>{opened.has(paper.id)?opened.delete(paper.id):opened.add(paper.id);syncSummaries();};sync();
+  title.append(toggle,make('h3',paper.title));row.append(title,actions);
   if(popular) {const likes=make('span',`↑ ${paper.likes??0}`,'paper-likes');likes.setAttribute('aria-label',t('votes',paper.likes??0));row.append(likes);}
   card.append(row,summary);return card;
 }
@@ -85,7 +106,7 @@ function renderWeekly() {
   if(!selectedWeek) {const requested=initial.get('week')||initial.get('date');selectedWeek=validDay(requested)?weekStart(requested):newest;}
   $('#edition-title').textContent=selectedWeek?rangeLabel(selectedWeek):'';
   $('#controls').replaceChildren();$('#papers').replaceChildren();$('#ranking-note').hidden=true;
-  if(!newest) {$('#paper-count').textContent=t('papers',0);$('#status').textContent=t('preparing');return;}
+  if(!newest) {$('#paper-count').textContent=t('papers',0);$('#status').textContent=t('preparing');syncSummaries();return;}
   const previous=make('button','‹','week-arrow');previous.id='previous-week';previous.type='button';previous.setAttribute('aria-label',t('previousWeek'));previous.disabled=selectedWeek<=oldest;
   const next=make('button','›','week-arrow');next.id='next-week';next.type='button';next.setAttribute('aria-label',t('nextWeek'));next.disabled=selectedWeek>=newest;
   const select=make('select');select.id='week-select';select.setAttribute('aria-label',t('chooseWeek'));
@@ -104,6 +125,7 @@ function renderWeekly() {
     const section=make('section',undefined,'day-group');const heading=make('h2',dateLabel(day),'day-heading');section.append(heading);$('#papers').append(section);
     included.filter(p=>p.hf_dates.includes(day)).forEach(p=>section.append(paperCard(p)));
   }
+  syncSummaries();
 }
 function renderPopular() {
   $('#edition-title').textContent=t('popularTitle',days);$('#controls').replaceChildren();$('#papers').replaceChildren();
@@ -114,6 +136,7 @@ function renderPopular() {
   papers.forEach(p=>$('#papers').append(paperCard(p,true)));
   $('#paper-count').textContent=t('papers',papers.length);$('#status').textContent=papers.length?'':t('empty');
   $('#ranking-note').hidden=false;$('#ranking-note').textContent=t('ranking');
+  syncSummaries();
 }
 function render() {
   applyLanguage();
@@ -126,6 +149,12 @@ if(document.body.dataset.page!=='reader') {
   $('#theme-light').onclick=()=>setTheme('light');$('#theme-dark').onclick=()=>setTheme('dark');
   setTheme(document.documentElement.dataset.theme==='dark'?'dark':'light');
   $('#language-toggle').onclick=()=>{language=language==='zh'?'en':'zh';storage.set('embodied-language',language);updateURL('lang',language);render();};
+  $('#toggle-all-summaries').onclick=()=>{
+    const expanded=$('#toggle-all-summaries').getAttribute('aria-pressed')==='true';
+    opened.clear();
+    if(!expanded && catalog) catalog.papers.forEach(paper=>opened.add(paper.id));
+    syncSummaries();
+  };
   render();$('#status').textContent=t('loading');
 }
 try {

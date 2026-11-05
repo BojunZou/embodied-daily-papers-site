@@ -44,6 +44,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           path: public
+          ref: main
       - name: Check out private engine
         uses: actions/checkout@v6
         with:
@@ -126,6 +127,16 @@ jobs:
       - name: Build static site
         working-directory: engine
         run: python -m pipeline.build --previous-site ../public
+      - name: Save generated publication bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: publication-bundle
+          path: |
+            engine/dist/
+            engine/state/catalog.json
+            engine/state/artifacts/
+          retention-days: 14
+          if-no-files-found: error
       - name: Publish downloads and site files
         working-directory: engine
         env:
