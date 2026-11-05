@@ -128,11 +128,11 @@ jobs:
         working-directory: engine
         run: python -m pipeline.build --previous-site ../public
       - name: Save generated publication bundle
+        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
           name: publication-bundle
           path: |
-            engine/dist/
             engine/state/catalog.json
             engine/state/artifacts/
           retention-days: 14
