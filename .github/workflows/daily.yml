@@ -180,6 +180,16 @@ jobs:
               print('- ' + error.replace('\n', ' '))
           PY
           fi
+          if [ -f engine/state/english-report.json ]; then
+            python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          with open('engine/state/english-report.json') as f:
+              data = json.load(f)
+          print('\n英文 Slides 已完成：', data['translated'])
+          for aid in data['failed']:
+              print('- 英文 Slides 待重试：' + aid)
+          PY
+          fi
       - name: Remove authentication file
         if: always()
         run: rm -f "$HOME/.local/share/devin/credentials.toml"
