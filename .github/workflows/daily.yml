@@ -143,7 +143,7 @@ jobs:
         run: python -u -m pipeline.metadata
       - name: Translate existing slides without changing layout
         working-directory: engine
-        run: python -u -m pipeline.english_slides
+        run: python -u -m pipeline.english_slides --previous-site ../public
       - name: Build static site
         working-directory: engine
         run: python -m pipeline.build --previous-site ../public
