@@ -2,13 +2,254 @@
   "version": 1,
   "papers": [
     {
+      "id": "2611.08449",
+      "title": "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
+      "hf_dates": [
+        "2026-11-06"
+      ],
+      "published_at": "2026-11-05",
+      "likes": 56,
+      "arxiv_url": "https://arxiv.org/abs/2611.08449",
+      "hf_url": "https://huggingface.co/papers/2611.08449",
+      "generated_at": "2026-11-06T17:36:31.784073+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "VFlash 先用 tool call 声明视觉基元（框、2D/3D 轨迹、稠密点运动）的类型和长度，再让一个轻量块扩散 drafter 一次前向输出整个基元，只要结构合法就直接接受，不要求与自回归目标模型逐 token 一致。这样 VLM 的视觉规划解码在 Jetson Thor、DGX Spark、H100 上快了 12–42×（端到端 2.6–5.2×），3D 机器人轨迹误差反而比 AR 低 18–61%，以它的规划为条件的 WAM 在 MolmoSpaces 上平均成功率从 62.6% 升到 70.2%。",
+      "slides": [
+        "slides/2611.08449/slide-01.webp",
+        "slides/2611.08449/slide-02.webp",
+        "slides/2611.08449/slide-03.webp",
+        "slides/2611.08449/slide-04.webp",
+        "slides/2611.08449/slide-05.webp",
+        "slides/2611.08449/slide-06.webp",
+        "slides/2611.08449/slide-07.webp",
+        "slides/2611.08449/slide-08.webp",
+        "slides/2611.08449/slide-09.webp",
+        "slides/2611.08449/slide-10.webp",
+        "slides/2611.08449/slide-11.webp",
+        "slides/2611.08449/slide-12.webp",
+        "slides/2611.08449/slide-13.webp",
+        "slides/2611.08449/slide-14.webp",
+        "slides/2611.08449/slide-15.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.08449/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.08449/deck.pdf"
+      },
+      "summary_en": "VFlash first uses a tool call to declare the type and length of a visual primitive (boxes, 2D/3D trajectories, dense point motion), then has a lightweight block-diffusion drafter output the entire primitive in a single forward pass; as long as the structure is valid, it is accepted directly, without requiring token-by-token agreement with the autoregressive target model. As a result, VLM visual-planning decoding is 12–42× faster on Jetson Thor, DGX Spark, and H100 (2.6–5.2× end-to-end), while the 3D robot trajectory error is actually 18–61% lower than with AR, and a WAM conditioned on its plans raises its average success rate on MolmoSpaces from 62.6% to 70.2%.",
+      "summary_en_source": "c92d40e5f47253ea932f88df451118e09e08207c14fb81717a957f8f0acb324e",
+      "code_url": "https://github.com/NVlabs/Eagle",
+      "code_checked_at": "2026-11-06",
+      "pdf_url_en": "pdfs/2611.08449.en.pdf",
+      "slides_en_source": "1228042d5613e9161677f5623abc1b5adaba351978a5b4e5567625ee0d040061",
+      "slides_en_revision": null,
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.08449/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.08449/deck.en.pdf"
+      },
+      "pdf_url": "pdfs/2611.08449.pdf"
+    },
+    {
+      "id": "2611.08373",
+      "title": "SLA: Scaling Spatial-Language-Action Model via Continual Pre-training",
+      "hf_dates": [
+        "2026-11-06"
+      ],
+      "published_at": "2026-11-05",
+      "likes": 18,
+      "arxiv_url": "https://arxiv.org/abs/2611.08373",
+      "hf_url": "https://huggingface.co/papers/2611.08373",
+      "generated_at": "2026-11-06T17:34:41.206502+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "SLA 以 π0.5 为起点，在约 1.7M 条异构机器人轨迹上做持续预训练：训练时把 VLA 中间层的视觉 token 与冻结的 3D 感知模型 OmniVGGT 的特征做余弦对齐（多层门控融合，配合状态 dropout），后训练阶段继续保留这项对齐；推理时结构与 π0.5 完全相同，不需要深度或相机标定。该方法在 LIBERO-Plus、RoboTwin 2.0（Clean2Random）、RoboCasa-Panda、RoboDojo-Real 上取得 SOTA，在 8 个真机条件下平均成功率比 π0.5 高 24 个百分点。",
+      "slides": [
+        "slides/2611.08373/slide-01.webp",
+        "slides/2611.08373/slide-02.webp",
+        "slides/2611.08373/slide-03.webp",
+        "slides/2611.08373/slide-04.webp",
+        "slides/2611.08373/slide-05.webp",
+        "slides/2611.08373/slide-06.webp",
+        "slides/2611.08373/slide-07.webp",
+        "slides/2611.08373/slide-08.webp",
+        "slides/2611.08373/slide-09.webp",
+        "slides/2611.08373/slide-10.webp",
+        "slides/2611.08373/slide-11.webp",
+        "slides/2611.08373/slide-12.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.08373/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.08373/deck.pdf"
+      },
+      "summary_en": "SLA starts from π0.5 and performs continual pre-training on about 1.7M heterogeneous robot trajectories: during training, it cosine-aligns the visual tokens from the VLA's intermediate layers with features from the frozen 3D perception model OmniVGGT (using multi-layer gated fusion together with state dropout), and this alignment is kept during the post-training stage as well. At inference, the architecture is exactly the same as π0.5, and neither depth nor camera calibration is required. The method achieves SOTA on LIBERO-Plus, RoboTwin 2.0 (Clean2Random), RoboCasa-Panda, and RoboDojo-Real, and across 8 real-robot conditions its average success rate is 24 percentage points higher than π0.5.",
+      "summary_en_source": "350db657c3749095f56dc235beb5ea67383ed655332d50e5c9ca6d0082667036",
+      "code_url": "https://github.com/OpenHelix-Team/Spatial-Forcing",
+      "code_checked_at": "2026-11-06",
+      "pdf_url_en": "pdfs/2611.08373.en.pdf",
+      "slides_en_source": "a0d5fcf485b3071ecf73193070cf95675c357bbb6f81d878aa46333659f5fcc5",
+      "slides_en_revision": null,
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.08373/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.08373/deck.en.pdf"
+      },
+      "pdf_url": "pdfs/2611.08373.pdf"
+    },
+    {
+      "id": "2611.06817",
+      "title": "Open-HumanScale: An Open Recipe for Scaling Human and Robot Experience for Embodied Foundation Models",
+      "hf_dates": [
+        "2026-11-06"
+      ],
+      "published_at": "2026-11-04",
+      "likes": 2,
+      "arxiv_url": "https://arxiv.org/abs/2611.06817",
+      "hf_url": "https://huggingface.co/papers/2611.06817",
+      "generated_at": "2026-11-06T17:45:11.588419+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "**作者整理出 5 万小时、带手部动作和语言标注的第一人称人类视频，并全部开源。用它预训练一个\"世界–动作模型\"（WAM）后，机器人在分布外场景的成功率随预训练小时数近似对数线性上升。在此基础上再加入 1.46 万小时机器人数据，并改用目标图像来指定任务，得到的 HumanWAM-Goal 在 RoboTwin 2.0 上拿到 88.65% 的平均成功率（SOTA），还能零样本执行任务，并能只换目标图就改变行为（\"具身上下文学习\"）。**",
+      "slides": [
+        "slides/2611.06817/slide-01.webp",
+        "slides/2611.06817/slide-02.webp",
+        "slides/2611.06817/slide-03.webp",
+        "slides/2611.06817/slide-04.webp",
+        "slides/2611.06817/slide-05.webp",
+        "slides/2611.06817/slide-06.webp",
+        "slides/2611.06817/slide-07.webp",
+        "slides/2611.06817/slide-08.webp",
+        "slides/2611.06817/slide-09.webp",
+        "slides/2611.06817/slide-10.webp",
+        "slides/2611.06817/slide-11.webp",
+        "slides/2611.06817/slide-12.webp",
+        "slides/2611.06817/slide-13.webp",
+        "slides/2611.06817/slide-14.webp",
+        "slides/2611.06817/slide-15.webp",
+        "slides/2611.06817/slide-16.webp",
+        "slides/2611.06817/slide-17.webp",
+        "slides/2611.06817/slide-18.webp",
+        "slides/2611.06817/slide-19.webp",
+        "slides/2611.06817/slide-20.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.06817/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.06817/deck.pdf"
+      },
+      "summary_en": "**The authors curated 50,000 hours of first-person human video with hand-motion and language annotations, and open-sourced all of it. After using it to pre-train a \"world–action model\" (WAM), the robot's success rate in out-of-distribution scenes rises approximately log-linearly with the number of pre-training hours. Building on this, by further adding 14,600 hours of robot data and switching to goal images to specify tasks, the resulting HumanWAM-Goal achieves an average success rate of 88.65% on RoboTwin 2.0 (SOTA), can also execute tasks zero-shot, and can change its behavior simply by swapping the goal image (\"embodied in-context learning\").**",
+      "summary_en_source": "fca308b621592b1dad81d589d9edcd936ea4134a01fbd8d7a11b282481a6b388",
+      "code_url": "https://github.com/DAGroup-PKU/HumanNet",
+      "code_checked_at": "2026-11-06",
+      "pdf_url_en": "pdfs/2611.06817.en.pdf",
+      "slides_en_source": "25bb0cae32f497b12d1bd0e363fe63255786a6354f997d446139f0f548e0d8a5",
+      "slides_en_revision": null,
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.06817/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.06817/deck.en.pdf"
+      },
+      "pdf_url": "pdfs/2611.06817.pdf"
+    },
+    {
+      "id": "2611.04527",
+      "title": "Future Representation Distillation for Imagination-free World Action Models",
+      "hf_dates": [
+        "2026-11-06"
+      ],
+      "published_at": "2026-11-04",
+      "likes": 4,
+      "arxiv_url": "https://arxiv.org/abs/2611.04527",
+      "hf_url": "https://huggingface.co/papers/2611.04527",
+      "generated_at": "2026-11-06T17:35:20.294572+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "DreamFree 让一个冻结的视频扩散模型（看过完整的未来视频）当老师，把它的中间层表征蒸馏给一个**只看当前帧**的视频 DiT 编码器。这样策略只要做一次前向就能拿到\"预见未来\"的视觉特征，再用动作 DiT 解码出动作。它保留了视频先验的预测能力，又省掉了迭代生成未来视频：在 14B 骨干上达到 11Hz 闭环控制，比 DreamZero 快 17.8 倍；真实世界 DROID 成功率 64%，DreamZero 为 56%，π0.5 为 16%。",
+      "slides": [
+        "slides/2611.04527/slide-01.webp",
+        "slides/2611.04527/slide-02.webp",
+        "slides/2611.04527/slide-03.webp",
+        "slides/2611.04527/slide-04.webp",
+        "slides/2611.04527/slide-05.webp",
+        "slides/2611.04527/slide-06.webp",
+        "slides/2611.04527/slide-07.webp",
+        "slides/2611.04527/slide-08.webp",
+        "slides/2611.04527/slide-09.webp",
+        "slides/2611.04527/slide-10.webp",
+        "slides/2611.04527/slide-11.webp",
+        "slides/2611.04527/slide-12.webp",
+        "slides/2611.04527/slide-13.webp",
+        "slides/2611.04527/slide-14.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.04527/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.04527/deck.pdf"
+      },
+      "summary_en": "DreamFree uses a frozen video diffusion model (which has seen the complete future video) as a teacher and distills its intermediate-layer representations into a video DiT encoder that **only sees the current frame**. This way, the policy needs only a single forward pass to obtain visual features that \"foresee the future\", which an action DiT then decodes into actions. It retains the predictive capability of the video prior while eliminating the iterative generation of future video: on a 14B backbone it achieves 11Hz closed-loop control, 17.8 times faster than DreamZero; its real-world DROID success rate is 64%, compared with 56% for DreamZero and 16% for π0.5.",
+      "summary_en_source": "a2e518f2f5bbf77bbf2b8ac760372c0754e1677d0d84aed415b83ccb453fd0eb",
+      "code_url": "https://github.com/harryjo97/dreamfree",
+      "code_checked_at": "2026-11-06",
+      "pdf_url_en": "pdfs/2611.04527.en.pdf",
+      "slides_en_source": "c1018ee73cfb10007c722bb6dd3d2ebf1661ed4952bf10d77cbc43819453ad2f",
+      "slides_en_revision": null,
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.04527/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.04527/deck.en.pdf"
+      },
+      "pdf_url": "pdfs/2611.04527.pdf"
+    },
+    {
+      "id": "2611.02660",
+      "title": "HeLM: Hierarchical Explicit Language Memory for Non-Markovian Manipulation",
+      "hf_dates": [
+        "2026-11-06"
+      ],
+      "published_at": "2026-11-02",
+      "likes": 4,
+      "arxiv_url": "https://arxiv.org/abs/2611.02660",
+      "hf_url": "https://huggingface.co/papers/2611.02660",
+      "generated_at": "2026-11-06T17:41:21.872243+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "HeLM 让一个微调过的 VLM 当高层策略，用\"检测事件 → 事件触发才更新\"两步把任务进度写成简短的结构化文本记忆（分为 episode 内的工作记忆和跨 episode 的情景上下文），再把动作命令交给 π0 这类 VLA 执行。在 10 个真机非马尔可夫任务上，它的 intra-episode 子任务成功率是 85.7%（最强基线 72.9%），inter-episode 是 89.2%（基线 16.6%）。和存视觉关键帧的方案比，长时程下显存约为其 1/4.5，速度约快 2.5 倍。",
+      "slides": [
+        "slides/2611.02660/slide-01.webp",
+        "slides/2611.02660/slide-02.webp",
+        "slides/2611.02660/slide-03.webp",
+        "slides/2611.02660/slide-04.webp",
+        "slides/2611.02660/slide-05.webp",
+        "slides/2611.02660/slide-06.webp",
+        "slides/2611.02660/slide-07.webp",
+        "slides/2611.02660/slide-08.webp",
+        "slides/2611.02660/slide-09.webp",
+        "slides/2611.02660/slide-10.webp",
+        "slides/2611.02660/slide-11.webp",
+        "slides/2611.02660/slide-12.webp",
+        "slides/2611.02660/slide-13.webp",
+        "slides/2611.02660/slide-14.webp",
+        "slides/2611.02660/slide-15.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.02660/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.02660/deck.pdf"
+      },
+      "summary_en": "HeLM uses a fine-tuned VLM as the high-level policy, which writes task progress into a short, structured textual memory via a two-step process of \"detect events → update only when an event is triggered\" (divided into within-episode working memory and cross-episode episodic context), and then hands action commands to a VLA such as π0 for execution. On 10 real-robot non-Markovian tasks, its intra-episode subtask success rate is 85.7% (strongest baseline 72.9%), and its inter-episode success rate is 89.2% (baseline 16.6%). Compared with approaches that store visual keyframes, over long horizons it uses about 1/4.5 of the GPU memory and is about 2.5 times faster.",
+      "summary_en_source": "95ce09ad60148ab7efaf61b6d985b6ad5405a0294caf3776f48ab891c7036922",
+      "code_url": "https://github.com/kimspacehuni/HeLM",
+      "code_checked_at": "2026-11-06",
+      "pdf_url_en": "pdfs/2611.02660.en.pdf",
+      "slides_en_source": "3201fbe814659a1dcac12b62e99c57bd203f37a73c5a8f8849352cb81158b736",
+      "slides_en_revision": null,
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.02660/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.02660/deck.en.pdf"
+      },
+      "pdf_url": "pdfs/2611.02660.pdf"
+    },
+    {
       "id": "2611.06918",
       "title": "From Pixels to Actions - Towards Native Vision-Language-Action Policies",
       "hf_dates": [
         "2026-11-05"
       ],
       "published_at": "2026-11-04",
-      "likes": 49,
+      "likes": 57,
       "arxiv_url": "https://arxiv.org/abs/2611.06918",
       "hf_url": "https://huggingface.co/papers/2611.06918",
       "generated_at": "2026-11-05T17:42:24.369889+08:00",
@@ -59,7 +300,7 @@
         "2026-11-05"
       ],
       "published_at": "2026-11-04",
-      "likes": 5,
+      "likes": 11,
       "arxiv_url": "https://arxiv.org/abs/2611.06768",
       "hf_url": "https://huggingface.co/papers/2611.06768",
       "generated_at": "2026-11-05T17:52:21.642424+08:00",
@@ -110,7 +351,7 @@
         "2026-11-05"
       ],
       "published_at": "2026-11-03",
-      "likes": 20,
+      "likes": 25,
       "arxiv_url": "https://arxiv.org/abs/2611.05320",
       "hf_url": "https://huggingface.co/papers/2611.05320",
       "generated_at": "2026-11-05T17:42:08.364928+08:00",
@@ -152,13 +393,59 @@
       }
     },
     {
+      "id": "2611.05029",
+      "title": "DRAP: Dynamics-Risk Adaptive Plasticity for Continual Learning in Physical AI",
+      "hf_dates": [
+        "2026-11-05"
+      ],
+      "published_at": "2026-11-03",
+      "likes": 0,
+      "arxiv_url": "https://arxiv.org/abs/2611.05029",
+      "hf_url": "https://huggingface.co/papers/2611.05029",
+      "generated_at": "2026-11-06T17:43:21.121483+08:00",
+      "model": "claude-opus-5-5-medium",
+      "summary": "DRAP 先用专家轨迹拟合局部线性动力学，以状态转移矩阵的最大奇异值 σ_max(A_t) 衡量“这一刻出错会被物理放大多少”，再用这个风险给逐样本的动作梯度加权，累积成张量级重要性，最后直接调小重要张量的 AdamW 学习率。整个方法不用回放、不存参考权重。在 OpenVLA 上按 LIBERO Spatial→Object→Goal 顺序训练，平均遗忘从标准微调的 0.77、EWC 的 0.63 降到 0.31。",
+      "slides": [
+        "slides/2611.05029/slide-01.webp",
+        "slides/2611.05029/slide-02.webp",
+        "slides/2611.05029/slide-03.webp",
+        "slides/2611.05029/slide-04.webp",
+        "slides/2611.05029/slide-05.webp",
+        "slides/2611.05029/slide-06.webp",
+        "slides/2611.05029/slide-07.webp",
+        "slides/2611.05029/slide-08.webp",
+        "slides/2611.05029/slide-09.webp",
+        "slides/2611.05029/slide-10.webp",
+        "slides/2611.05029/slide-11.webp",
+        "slides/2611.05029/slide-12.webp",
+        "slides/2611.05029/slide-13.webp"
+      ],
+      "downloads": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.05029/deck.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.05029/deck.pdf"
+      },
+      "summary_en": "DRAP first fits local linear dynamics from expert trajectories and uses the largest singular value of the state transition matrix, σ_max(A_t), to measure \"how much an error at this moment would be physically amplified\"; it then uses this risk to weight per-sample action gradients, accumulates them into tensor-level importance, and finally directly lowers the AdamW learning rate for important tensors. The whole method uses no replay and stores no reference weights. On OpenVLA trained sequentially on LIBERO Spatial→Object→Goal, average forgetting drops from 0.77 for standard fine-tuning and 0.63 for EWC to 0.31.",
+      "summary_en_source": "9518aeabf7bcdbb12602675e21fa4b46b5655e59b3c24b38fb80d7f6bae621e6",
+      "code_url": "https://github.com/oswaldoludwig/DRAP-Dynamics-Risk-Adaptive-Plasticity",
+      "code_checked_at": "2026-11-06",
+      "pdf_url_en": "pdfs/2611.05029.en.pdf",
+      "slides_en_source": "bdde866552f05685f070bbbaca856c7cd257cb68535ff57b9c460f9eaf5c2f56",
+      "slides_en_revision": null,
+      "slides_en_version": "text-only-v1",
+      "downloads_en": {
+        "pptx": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.05029/deck.en.pptx",
+        "pdf": "https://github.com/BojunZou/embodied-daily-papers-site/releases/download/paper-2611.05029/deck.en.pdf"
+      },
+      "pdf_url": "pdfs/2611.05029.pdf"
+    },
+    {
       "id": "2611.04391",
       "title": "Human-to-Robot Transfer via Bridging Representation and Action Space in VLAs",
       "hf_dates": [
         "2026-11-05"
       ],
       "published_at": "2026-11-03",
-      "likes": 12,
+      "likes": 13,
       "arxiv_url": "https://arxiv.org/abs/2611.04391",
       "hf_url": "https://huggingface.co/papers/2611.04391",
       "generated_at": "2026-11-05T17:43:21.313840+08:00",
@@ -208,7 +495,7 @@
         "2026-11-04"
       ],
       "published_at": "2026-11-03",
-      "likes": 54,
+      "likes": 55,
       "arxiv_url": "https://arxiv.org/abs/2611.05377",
       "hf_url": "https://huggingface.co/papers/2611.05377",
       "generated_at": "2026-11-05T14:49:38.356942+08:00",
@@ -256,7 +543,7 @@
         "2026-11-04"
       ],
       "published_at": "2026-11-03",
-      "likes": 79,
+      "likes": 85,
       "arxiv_url": "https://arxiv.org/abs/2611.05275",
       "hf_url": "https://huggingface.co/papers/2611.05275",
       "generated_at": "2026-11-05T15:35:03.168274+08:00",
@@ -352,7 +639,7 @@
         "2026-11-04"
       ],
       "published_at": "2026-11-03",
-      "likes": 9,
+      "likes": 10,
       "arxiv_url": "https://arxiv.org/abs/2611.04870",
       "hf_url": "https://huggingface.co/papers/2611.04870",
       "generated_at": "2026-11-05T15:03:52.612130+08:00",
@@ -453,7 +740,7 @@
         "2026-11-04"
       ],
       "published_at": "2026-11-02",
-      "likes": 46,
+      "likes": 48,
       "arxiv_url": "https://arxiv.org/abs/2611.02497",
       "hf_url": "https://huggingface.co/papers/2611.02497",
       "generated_at": "2026-11-05T14:50:21.365960+08:00",
@@ -506,7 +793,7 @@
         "2026-11-04"
       ],
       "published_at": "2026-10-23",
-      "likes": 14,
+      "likes": 104,
       "arxiv_url": "https://arxiv.org/abs/2610.00854",
       "hf_url": "https://huggingface.co/papers/2610.00854",
       "generated_at": "2026-11-05T14:59:01.132762+08:00",
@@ -650,7 +937,7 @@
         "2026-11-03"
       ],
       "published_at": "2026-10-30",
-      "likes": 3,
+      "likes": 4,
       "arxiv_url": "https://arxiv.org/abs/2610.41216",
       "hf_url": "https://huggingface.co/papers/2610.41216",
       "generated_at": "2026-11-03T17:50:28.291092+08:00",
@@ -1169,7 +1456,7 @@
       }
     }
   ],
-  "last_checked_at": "2026-11-05T17:52:23.753540+08:00",
+  "last_checked_at": "2026-11-06T17:45:14.096391+08:00",
   "title": "Embodied AI Daily Papers",
   "today": "2026-11-06",
   "timezone": "Asia/Shanghai"
