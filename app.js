@@ -19,7 +19,7 @@ const make = (tag, text, className) => {
   return element;
 };
 const safeExternal = value => { try {const url = new URL(value);return url.protocol === 'https:' ? url.href : null;} catch {return null;} };
-const complete = paper => paper.summary && paper.slides?.length && paper.downloads?.pptx && paper.downloads?.pdf;
+const complete = paper => paper.summary && (paper.slides?.length || paper.slide_count>0) && paper.downloads?.pptx && paper.downloads?.pdf;
 const validDay = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(`${value}T12:00:00Z`)) && new Date(`${value}T12:00:00Z`).toISOString().slice(0,10) === value;
 const addDays = (day, count) => {const date = new Date(`${day}T12:00:00Z`);date.setUTCDate(date.getUTCDate()+count);return date.toISOString().slice(0,10);};
 const weekStart = day => addDays(day, -(new Date(`${day}T12:00:00Z`).getUTCDay()+6)%7);
@@ -29,10 +29,16 @@ function dateLabel(day, year=false) {
 function rangeLabel(start) {const end=addDays(start,6);const year=start.slice(0,4)!==end.slice(0,4);return `${dateLabel(start,year)} ~ ${dateLabel(end,year)}`;}
 function anchor(text, href, className) {const a=make('a',text,className);a.href=href;a.target='_blank';a.rel='noopener noreferrer';return a;}
 function pdfURL(paper) {
-  // A same-origin PDF is served inline by Pages instead of downloaded as a Release attachment.
+  // Both the main site and the monthly archive serve PDFs inline via Pages.
   if (!/^\d{4}\.\d{4,5}(?:v\d+)?$/.test(paper.id)) throw Error(t('invalidData'));
   if(language==='en' && !paper.pdf_url_en) return null;
-  return new URL(`./pdfs/${paper.id}${language==='en'?'.en':''}.pdf`,location.href).href;
+  const filename=`${paper.id}${language==='en'?'.en':''}.pdf`;
+  const value=(language==='en'?paper.pdf_url_en:paper.pdf_url)||`pdfs/${filename}`;
+  const url=new URL(value,location.href);
+  const local=url.origin===location.origin && url.pathname.endsWith(`/pdfs/${filename}`);
+  const archive=url.protocol==='https:' && /^[a-z0-9-]+\.github\.io$/.test(url.hostname) && url.pathname.endsWith(`/pdfs/${filename}`);
+  if((!local && !archive) || url.username || url.password) throw Error(t('invalidData'));
+  return url.href;
 }
 function setTheme(theme) {
   document.documentElement.dataset.theme=theme;
