@@ -1,11 +1,7 @@
-# Embodied AI Daily Papers
+# Embodied AI Daily Papers — moved to iPPLab
 
-Hugging Face 具身智能论文周列表，支持中英文总结及黑白主题。
+Website: [https://ipplab.github.io/embodied-daily-papers-site/](https://ipplab.github.io/embodied-daily-papers-site/)
 
-- 每日论文：按周归档，以 HF 收录日期分组；一句话总结默认折叠。
-- 热门论文：近 7/30 天收录论文的 Hugging Face 点赞热度。
-- 论文链接：解读 PDF、arXiv 原文、作者代码仓库（如有）、HF 讨论。
+The homepage and legacy reader redirect to the iPPLab website. Daily generation runs in `iPPLab/embodied-daily-papers-site`.
 
-PDF 可直接在浏览器阅读；PPTX/PDF 同时保存在 Releases。生成与构建引擎在私有仓库维护。
-
-幻灯片为 AI 辅助生成的论文解读；论文原图、实验数字及研究结论的来源见原文和幻灯片标注。
+This repository is retained for historical PDFs and PPTX/PDF Releases. Those existing download links remain available. New slide PDFs are stored in the monthly repositories under `bjipppp`.
