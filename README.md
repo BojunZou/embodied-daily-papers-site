@@ -1,7 +1,7 @@
-# Embodied AI Daily Papers — moved to iPPLab
+# Embodied AI Daily Papers
 
-Website: [https://ipplab.github.io/embodied-daily-papers-site/](https://ipplab.github.io/embodied-daily-papers-site/)
+Website: [Embodied AI Daily Papers](https://ipplab.github.io/embodied-ai-daily-papers/)
 
-The homepage and legacy reader redirect to the iPPLab website. Daily generation runs in `iPPLab/embodied-daily-papers-site`.
+Paper reading list: [iPPLab/embodied-ai-daily-papers](https://github.com/iPPLab/embodied-ai-daily-papers)
 
-This repository is retained for historical PDFs and PPTX/PDF Releases. Those existing download links remain available. New slide PDFs are stored in the monthly repositories under `bjipppp`.
+The homepage and legacy reader redirect to the current website. Historical PDF and PPTX downloads remain available.
